@@ -1,6 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
-const Header = () => {
+const Header = (props) => {
+	const iconCode = () => {
+		if (props.isDark) {
+			return <FaSun id="icon" />;
+		}
+		return <FaMoon id="icon" />;
+	};
+
 	return (
 		<header className="header-background">
 			<div className="top-bar-container">
@@ -8,8 +17,12 @@ const Header = () => {
 					<li className="li-item li-link first-item start-app">
 						Create new
 					</li>
-					<li className="li-item theme-changer theme-icon">
-						Change theme
+					<li 
+						id="theme-id"
+						className="li-item theme-changer theme-icon"
+						onClick={() => props.handleTheme(!props.isDark)}
+					>
+						{iconCode()}
 					</li>
 				</ul>
 			</div>
@@ -30,3 +43,10 @@ const Header = () => {
 		</header>
 	);
 };
+
+Header.propTypes = {
+	isDark: PropTypes.bool.isRequired,
+	handleTheme: PropTypes.func.isRequired
+};
+
+export default Header;
