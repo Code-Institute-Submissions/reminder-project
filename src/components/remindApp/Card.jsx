@@ -30,15 +30,15 @@ const Card = (props) => {
 	}
 
 	return (
-		<div className="card-container">
-			<FaWindowClose className="card-delete-btn" onClick={() => cardDelete()} />
-			<p className="name-heading card-heading">Name:</p> <p className="card-name card-content">{item.name}</p>
-			<p className="date-heading card-heading">Created on:</p> <p className="card-date card-content">{created.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}</p>
-			{!item.done && <FaCheckSquare className="card-complete-btn" onClick={() => cardComplete()} />}
-			{!item.done && !item.expired && <p className="countdown-heading card-heading">Expires in: </p>}
-			{item.done && <p className="countdown-heading card-heading">Done: </p>}
-			{!item.done && item.expired && <p className="countdown-heading card-heading">Expired on: </p>}
-			<div className="countdown card-content">
+		<div className='card-container'>
+			<FaWindowClose className='card-delete-btn' onClick={() => cardDelete()} />
+			<p className='name-heading card-heading'>Name:</p> <p className='card-name card-content'>{item.name}</p>
+			<p className='date-heading card-heading'>Created on:</p> <p className='card-date card-content'>{created.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}</p>
+			{!item.done && <FaCheckSquare className='card-complete-btn' onClick={() => cardComplete()} />}
+			{!item.done && !item.expired && <p className='countdown-heading card-heading'>Expires in: </p>}
+			{item.done && <p className='countdown-heading card-heading'>Done: </p>}
+			{!item.done && item.expired && <p className='countdown-heading card-heading'>Expired on: </p>}
+			<div className='countdown card-content'>
 				{!item.done && !item.expired && <Countdown totalSeconds={Math.floor((item.expires - Date.now()) / 1000)} id={item.id} />}
 				{/* Checks each items property states and writes down when the reminder expired */}
 				{!item.done && item.expired && expires.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}

@@ -5,33 +5,33 @@ import { FaMoon, FaSun } from 'react-icons/fa';
 const Header = (props) => {
 	const iconCode = () => {
 		if (props.isDark) {
-			return <FaSun id="icon" />;
+			return <FaSun id='icon' />;
 		}
-		return <FaMoon id="icon" />;
+		return <FaMoon id='icon' />;
 	};
 
 	return (
-		<header className="header-background">
-			<div className="top-bar-container">
-				<ul className="top-bar">
-					<li className="li-item li-link first-item start-app" onClick={() => props.handleForm(true)}>
+		<header className='header-background'>
+			<div className='top-bar-container'>
+				<ul className='top-bar'>
+					<li className='li-item li-link first-item start-app' onClick={() => props.handleForm(true)}>
 						Create new
 					</li>
 					<li 
-						id="theme-id"
-						className="li-item theme-changer theme-icon"
+						id='theme-id'
+						className='li-item theme-changer theme-icon'
 						onClick={() => props.handleTheme(!props.isDark)}
 					>
 						{iconCode()}
 					</li>
 				</ul>
 			</div>
-			<div className="intro-panel">
-				<img src="#" alt="#" className="panel-img" />
-				<h1 className="panel-heading">
+			<div className='intro-panel'>
+				<img src='#' alt='#' className='panel-img' />
+				<h1 className='panel-heading'>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 				</h1>
-				<p className="panel-text">
+				<p className='panel-text'>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 					do eiusmod tempor incididunt ut labore et dolore magna
 					aliqua. Diam maecenas ultricies mi eget. Vitae sapien

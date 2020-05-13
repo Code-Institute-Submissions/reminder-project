@@ -12,17 +12,17 @@ export const ReminderContext = React.createContext({});
 function RemindApp(props) {
 	const [reminders, setReminders] = React.useState(() => InitialLoad());
 	const [notificationIgnore, setNotificationIgnore] = React.useState(true);
-	const [notificationData, setNotificationData] = React.useState({title: ""});
+	const [notificationData, setNotificationData] = React.useState({title: ''});
 
 	function InitialLoad() {
-		const list = loadFromLocalStorage("reminder") ?? [];
+		const list = loadFromLocalStorage('reminder') ?? [];
 		const updatedList = list.map((x) => {
 			if (x.expires <= Date.now()) {
 				x.expired = true;
 			}
 			return x;
 		});
-		saveToLocalStorage("reminder", updatedList);
+		saveToLocalStorage('reminder', updatedList);
 		return {
 			update: false,
 			list: updatedList
@@ -94,9 +94,9 @@ function RemindApp(props) {
 		<>
 			<ReminderContext.Provider value={contextValues}>
 				{props.formActive && <Form addReminder={addReminder} handleForm={props.handleForm} />}
-				<List key="expired" listType={ListType.expired} list={reminders.list.filter((x) => (x.done === false && x.expired === true))} />
-				<List key="running" listType={ListType.running} list={reminders.list.filter((x) => (x.done === false && x.expired === false))} />
-				<List key="done" listType={ListType.done} list={reminders.list.filter((x) => (x.done === true))} />
+				<List key='expired' listType={ListType.expired} list={reminders.list.filter((x) => (x.done === false && x.expired === true))} />
+				<List key='running' listType={ListType.running} list={reminders.list.filter((x) => (x.done === false && x.expired === false))} />
+				<List key='done' listType={ListType.done} list={reminders.list.filter((x) => (x.done === true))} />
 			</ReminderContext.Provider>
 			<Notification 
 				ignore={notificationIgnore && notificationData.title !== ''}

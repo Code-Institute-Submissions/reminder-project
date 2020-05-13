@@ -11,15 +11,15 @@ function List(props) {
 	/**
 	 *  TBW
 	 */
-	let name = "";
+	let name = '';
 	if (props.listType === ListType.expired) {
-		name = "Expired";
+		name = 'Expired';
 	}
 	if (props.listType === ListType.running) {
-		name = "Running";
+		name = 'Running';
 	}
 	if (props.listType === ListType.done) {
-		name = "Done";
+		name = 'Done';
 	}
 
 	/**
@@ -44,11 +44,11 @@ function List(props) {
 		<>
 		{(props.list.length > 0) && 
 			<div className={`list-container list-${props.listType}`}>
-				<div className="list-heading">
-					<label className="list-label">{name}</label>
-					<FaWindowClose className="del-list" onClick={() => deleteList(props.listType)} />
+				<div className='list-heading'>
+					<label className='list-label'>{name}</label>
+					<FaWindowClose className='del-list' onClick={() => deleteList(props.listType)} />
 				</div>
-				<div className="card">
+				<div className='card'>
 					{props.list.map((item) => (
 						<Card key={item.id} id={item.id} />
 					))}

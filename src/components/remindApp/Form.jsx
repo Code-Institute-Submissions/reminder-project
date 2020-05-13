@@ -6,7 +6,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 function Form(props) {
-	const [reminderName, setReminderName] = React.useState("");
+	const [reminderName, setReminderName] = React.useState('');
 	const [reminderTime, setReminderTime] = React.useState(new Date());
 	const [showError, setShowError] = React.useState(false);
 
@@ -22,24 +22,24 @@ function Form(props) {
 		 *  Sets both the form and form inputs back to default state after a reminder was added or the form was closed.
 		 */
 		props.addReminder({reminderName, selectedTime});
-		setReminderName("");
+		setReminderName('');
 		setReminderTime(null);
 		props.handleForm(false);
 	}
 
 	return (
-		<div className="container form-container">
-			<label htmlFor="name" className="form-label">
+		<div className='container form-container'>
+			<label htmlFor='name' className='form-label'>
 				Set a name:
 			</label>
 			<input 
-				className="form-input"
-				type="text"
-				name="name"
+				className='form-input'
+				type='text'
+				name='name'
 				onChange={(e) => setReminderName(e.target.value)}
 			/>
 
-			<label htmlFor="expTime" className="form-label">
+			<label htmlFor='expTime' className='form-label'>
 				Select time:
 			</label>
 			<DatePicker 
@@ -47,25 +47,25 @@ function Form(props) {
 				onChange={(date) => setReminderTime(date)}
 				onSelect={(date) => setReminderTime(date)}
 				showTimeSelect
-				timeFormat="HH:mm"
+				timeFormat='HH:mm'
 				timeIntervals={15}
-				timeCaption="Time"
-				dateFormat="yyyy-MM-dd h:mm aa"
+				timeCaption='Time'
+				dateFormat='yyyy-MM-dd h:mm aa'
 				minDate={new Date()}
-				name="expTime"
+				name='expTime'
 			/>
 			<button 
-				className="form-btn" 
-				type="submit" 
+				className='form-btn' 
+				type='submit' 
 				onClick={() => handleAdd()}
 			>
 				Add
 			</button>
-			<div className={showError ? "error-msg" : "hidden"}>
+			<div className={showError ? 'error-msg' : 'hidden'}>
 				Error: Cannot add reminder with an empty input field!
 			</div>
 			<FaWindowClose 
-				className="close-form" 
+				className='close-form' 
 				onClick={() => props.handleForm(false)}
 			/>
 		</div>

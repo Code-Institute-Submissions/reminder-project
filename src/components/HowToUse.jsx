@@ -2,10 +2,10 @@ import React from 'react';
 
 const HowToUse = () => {
 	return (
-		<section className="container">
-			<div className="how-to-use-container">
-				<h2 className="heading">How To Use</h2>
-				<p className="text-style">
+		<section className='container'>
+			<div className='how-to-use-container'>
+				<h2 className='heading'>How To Use</h2>
+				<p className='text-style'>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 					do eiusmod tempor incididunt ut labore et dolore magna
 					aliqua. Quam pellentesque nec nam aliquam. Quis enim
@@ -23,7 +23,7 @@ const HowToUse = () => {
 					nulla aliquet. Purus non enim praesent elementum facilisis
 					leo vel.
 				</p>
-				<p className="text-style">
+				<p className='text-style'>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 					do eiusmod tempor incididunt ut labore et dolore magna
 					aliqua. Quam pellentesque nec nam aliquam. Quis enim
