@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Countdown from './Countdown';
 import { ReminderContext } from './RemindApp';
 import { FaCheckSquare, FaWindowClose } from 'react-icons/fa';
 
@@ -38,7 +39,10 @@ const Card = (props) => {
 			{item.done && <p className="countdown-heading card-heading">Done: </p>}
 			{!item.done && item.expired && <p className="countdown-heading card-heading">Expired on: </p>}
 			<div className="countdown card-content">
-				
+				{!item.done && !item.expired && <Countdown totalSeconds={Math.floor((item.expires - Date.now()) / 1000)} id={item.id} />}
+				{/* Checks each items property states and writes down when the reminder expired */}
+				{!item.done && item.expired && expires.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}
+				{item.done && expires.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}
 			</div>
 		</div>
 	);
