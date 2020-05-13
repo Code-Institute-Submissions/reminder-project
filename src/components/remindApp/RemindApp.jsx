@@ -1,4 +1,6 @@
 import React from 'react';
+import { ListType } from '../../utils/Constants';
+import { uuidv4 } from '../../utils/HandleUUID';
 
 export const ReminderContext = React.createContext({});
 
@@ -15,7 +17,7 @@ function RemindApp() {
 	 */
 	function addReminder(date) {
 		const newReminder = {
-			id: "",
+			id: uuidv4(),
 			created: Date.now(),
 			name: data.reminderName,
 			expires: data.selectedTime,
