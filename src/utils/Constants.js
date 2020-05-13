@@ -1,4 +1,4 @@
-// Object that stores the text label of each list.
+// Object that stores the definition of each list type in its properties.
 export const ListType = {
 	done: "done",
 	expired: "expired",
