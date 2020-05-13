@@ -57,10 +57,10 @@ function Countdown(props) {
 		}
 
 		const data = {
-			title: "Reminder expired!",
+			title: 'Reminder expired!',
 			options: {
 				body: newList[index].name,
-				icon: ""
+				icon: ''
 			}
 		};
 		setNotificationData(data);
