@@ -2,6 +2,7 @@ import React from 'react';
 import "../css/App.css";
 import { loadFromLocalStorage, saveToLocalStorage } from '../utils/HandleLocalStorage';
 import Header from './Header';
+import HowToUse from './HowToUse';
 
 const StartPage = () => {
 	const [isDark, setIsDark] = React.useState(() => (loadFromLocalStorage("isDark") ?? false));
@@ -14,6 +15,7 @@ const StartPage = () => {
 	return (
 		<div className={isDark ? "dark app-container" : "light app-container"}>
 			<Header isDark={isDark} handleTheme={handleTheme} />
+			<HowToUse />
 		</div>
 	);
 };
