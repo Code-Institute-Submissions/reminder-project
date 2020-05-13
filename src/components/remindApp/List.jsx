@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Card from './Card';
 import { ReminderContext } from './RemindApp';
 import { ListType } from '../../utils/Constants';
 import { FaWindowClose } from 'react-icons/fa';
@@ -47,6 +48,11 @@ function List(props) {
 				<div className="list-heading">
 					<label className="list-label">{name}</label>
 					<FaWindowClose className="del-list" onClick={() => deleteList(props.listType)} />
+				</div>
+				<div className="card">
+					{props.list.map((item) => (
+						<Card key={item.id} id={item.id} />
+					))}
 				</div>
 			</div>
 		}
