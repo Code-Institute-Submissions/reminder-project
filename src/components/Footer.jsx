@@ -29,7 +29,7 @@ const Footer = () => {
 					</li>
 				</ul>
 			</div>
-			<div className='footer-copyright'>
+			<div>
 				<p className='copyright'>
 					Copyright © 2020
 					<span>

@@ -4,6 +4,7 @@ import { FaWindowClose } from 'react-icons/fa';
 import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
+import '../../css/Datepicker.css';
 
 function Form(props) {
 	const [reminderName, setReminderName] = React.useState('');
