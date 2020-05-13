@@ -14,7 +14,7 @@ const Header = (props) => {
 		<header className="header-background">
 			<div className="top-bar-container">
 				<ul className="top-bar">
-					<li className="li-item li-link first-item start-app">
+					<li className="li-item li-link first-item start-app" onClick={() => props.handleForm(true)}>
 						Create new
 					</li>
 					<li 
@@ -46,7 +46,8 @@ const Header = (props) => {
 
 Header.propTypes = {
 	isDark: PropTypes.bool.isRequired,
-	handleTheme: PropTypes.func.isRequired
+	handleTheme: PropTypes.func.isRequired,
+	handleForm: PropTypes.func.isRequired
 };
 
 export default Header;

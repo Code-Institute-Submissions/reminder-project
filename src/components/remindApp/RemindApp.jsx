@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ListType } from '../../utils/Constants';
 import { uuidv4 } from '../../utils/HandleUUID';
+import Form from './Form';
 
 export const ReminderContext = React.createContext({});
 
-function RemindApp() {
+function RemindApp(props) {
 	const [reminders, setReminders] = React.useState();
 
 	const contextValues = {
@@ -29,11 +31,16 @@ function RemindApp() {
 	return (
 		<>
 			<ReminderContext.Provider value={contextValues}>
-				<form action=""></form>
+				{props.formActive && <Form addReminder={addReminder} handleForm={props.handleForm} />}
 				<ul></ul>
 			</ReminderContext.Provider>
 		</>
 	);
 };
+
+RemindApp.propTypes = {
+	formActive: PropTypes.bool.isRequired,
+	handleForm: PropTypes.func.isRequired
+}
 
 export default RemindApp;
