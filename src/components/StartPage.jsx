@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/App.css';
+import '../App.css';
 import { loadFromLocalStorage, saveToLocalStorage } from '../utils/HandleLocalStorage';
 import Header from './Header';
 import HowToUse from './HowToUse';

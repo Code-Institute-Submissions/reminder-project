@@ -19,7 +19,7 @@ const Header = (props) => {
 					</li>
 					<li 
 						id='theme-id'
-						className='li-item theme-changer theme-icon'
+						className='li-item theme-icon'
 						onClick={() => props.handleTheme(!props.isDark)}
 					>
 						{iconCode()}

@@ -41,7 +41,7 @@ body {
 }
 
 .li-item {
-    width: 8rem;
+    width: 6rem;
     height: 4.5rem;
     box-shadow: 4px 0 10px -3px #010101;
     background: var(--bg-topbar);
@@ -74,10 +74,6 @@ body {
 
 /* Theme Changer */
 
-.theme-changer {
-    margin-left: 10px;
-}
-
 .theme-icon {
     font-size: 50px;
 }
@@ -88,8 +84,8 @@ body {
     height: 30vh;
     margin: 5rem 3rem 0 5rem;
     display: grid;
-    grid-template-columns: 250px auto;
-    grid-auto-rows: minmax(150px, 10rem);
+    grid-template-columns: auto;
+    grid-auto-rows: minmax(auto);
     grid-template-areas: 
         "img heading"
         "img text";
@@ -221,32 +217,35 @@ body {
 
 /* Card */
 
+.wrapper {
+    display: grid;
+}
+
 .card {
     display: flex;
     flex-wrap: wrap;
 }
 
 .card-container {
+    align-items: center;
+    padding-left: 5px;
     position: relative;
     border-radius: 10px;
     box-shadow: 0px 5px 10px rgb(71, 71, 71);
     display: grid;
-    width: 40%;
-    height: 70%;
-    margin-left: 14px;
-    margin-right: 12px;
-    margin-bottom: 2rem;
-    grid-template-areas: 
-        "name-heading name name"
-        "date-heading date date"
-        "countdown-h countdown countdown";
-}
-
-.card-container {
     width: 350px;
     height: 120px;
     color: var(--text-body);
     background: var(--bg-card);
+    margin-left: 14px;
+    margin-right: 12px;
+    margin-bottom: 2rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    grid-template-areas: 
+        "name-heading name name"
+        "date-heading date date"
+        "countdown-h countdown countdown";
 }
 
 .card-delete-btn {
@@ -282,6 +281,7 @@ body {
 }
 
 .card-content {
+    width: 100%;
     padding: 5px;
 }
 
@@ -435,6 +435,33 @@ body {
 .close-form:hover,
 .del-list:hover,
 .li-link:hover,
-.li-item:hover {
+.li-item:hover,
+.link-item:hover {
     color: rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries */
+
+@media(max-width: 767px) {
+    .container {
+        margin: 1rem .5rem 0 1rem;
+    }
+
+    .header-background {
+        padding-bottom: 5px;
+    }
+
+    .intro-panel {
+        display: inline-block;
+        margin: 1rem .5rem 0 1rem;
+    }
+
+    .panel-img {
+        display: none;
+    }
+
+    .li-item {
+        width: 4rem;
+        height: 3.5rem;
+    }
 }
