@@ -24,7 +24,6 @@ function List(props) {
 
 	/**
 	 *	Delete selected part by selecting the rest and saving it.
-	 *	We do this by filtering the reminders by their done and expired properties.
 	 */
 	function deleteList(what) {
 		if (what === ListType.done) {

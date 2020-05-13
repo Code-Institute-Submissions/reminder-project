@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ReminderContext } from './RemindApp';
 
 function Countdown(props) {
-	const { reminders, setReminders } = React.useContext(ReminderContext);
+	const { reminders, setReminders, notificationIgnore, setNotificationData } = React.useContext(ReminderContext);
 
 	const timeStates = {
 		hours: 0,
@@ -51,6 +51,21 @@ function Countdown(props) {
 		}, [delay]);
 	}
 
+	function notifyUser() {
+		if (notificationIgnore) {
+			return;
+		}
+
+		const data = {
+			title: "Reminder expired!",
+			options: {
+				body: newList[index].name,
+				icon: ""
+			}
+		};
+		setNotificationData(data);
+	}
+
 	/**
 	 *	Sets the countdown to count backwards.
 	 *	Checks if each time state is zero and updates the corresponding states.
@@ -63,6 +78,7 @@ function Countdown(props) {
 		if (countdownTimer.seconds === 0) {
 			if (countdownTimer.minutes === 0) {
 				if (countdownTimer.hours === 0) {
+					notifyUser();
 					newList[index].expired = true;
 					setReminders({update: !reminders.update, list: newList});
 					return;
@@ -74,6 +90,7 @@ function Countdown(props) {
 			countdownTimer.seconds = 59;
 		}
 		setCountdownTimer(countdownTimer);
+		setUpdate(countdownTimer.seconds);
 	}, 1000);
 
 	return (
