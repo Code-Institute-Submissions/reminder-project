@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FaWindowClose } from 'react-icons/fa';
+import DatePicker from 'react-datepicker';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 function Form(props) {
 	const [reminderName, setReminderName] = React.useState("");
@@ -39,7 +42,18 @@ function Form(props) {
 			<label htmlFor="expTime" className="form-label">
 				Select time:
 			</label>
-			<input type="text"/>
+			<DatePicker 
+				selected={reminderTime}
+				onChange={(date) => setReminderTime(date)}
+				onSelect={(date) => setReminderTime(date)}
+				showTimeSelect
+				timeFormat="HH:mm"
+				timeIntervals={15}
+				timeCaption="Time"
+				dateFormat="yyyy-MM-dd h:mm aa"
+				minDate={new Date()}
+				name="expTime"
+			/>
 			<button 
 				className="form-btn" 
 				type="submit" 
