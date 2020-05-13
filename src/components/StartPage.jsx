@@ -3,6 +3,7 @@ import "../css/App.css";
 import { loadFromLocalStorage, saveToLocalStorage } from '../utils/HandleLocalStorage';
 import Header from './Header';
 import HowToUse from './HowToUse';
+import Footer from './Footer';
 
 const StartPage = () => {
 	const [isDark, setIsDark] = React.useState(() => (loadFromLocalStorage("isDark") ?? false));
@@ -16,6 +17,7 @@ const StartPage = () => {
 		<div className={isDark ? "dark app-container" : "light app-container"}>
 			<Header isDark={isDark} handleTheme={handleTheme} />
 			<HowToUse />
+			<Footer />
 		</div>
 	);
 };
