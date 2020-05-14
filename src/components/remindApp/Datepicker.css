@@ -67,3 +67,16 @@
 	--bg-hover-light: #f0f0f0;
 	--bg-hover-dark: var(--gray1);
 }
+
+/* Media Queries */
+
+@media(max-width: 767px) {
+	.react-datepicker-popper {
+		width: 350px;
+		left: -90px !important;
+	}
+
+	.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle {
+		left: 140px;
+	}
+}
