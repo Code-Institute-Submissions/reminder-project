@@ -70,14 +70,14 @@ body {
 /* Intro Panel */
 
 .intro-panel {
-    height: 30vh;
+    height: 20vh;
     margin: 5rem 3rem 0 5rem;
     text-align: center;
 }
 
 .panel-heading {
     font-weight: 800;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .panel-text {
@@ -305,7 +305,7 @@ body {
 }
 
 .how-to-use--container {
-    height: 100vh;
+    margin-bottom: 5rem;
 }
 
 .heading {
@@ -475,6 +475,10 @@ body {
     .intro-panel {
         height: fit-content;
         margin-top: 0;
+    }
+
+    .panel-heading {
+        margin-bottom: 1rem;
     }
 
     .panel-text {

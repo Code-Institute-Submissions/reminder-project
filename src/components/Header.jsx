@@ -29,7 +29,7 @@ const Header = (props) => {
 			</div>
 			<div className='intro-panel'>
 				<h1 className='panel-heading'>
-					remind-project
+					Task Meister
 				</h1>
 				<p className='panel-text'>
 					Never forget another task again!

@@ -42,9 +42,9 @@ function RemindApp(props) {
 		function updateTitle() {
 			const expired = reminders.list.filter(x => (x.expired === true && x.done === false));
 			if (expired.length > 0) {
-				document.title = `(${expired.length}) reminder-project`;
+				document.title = `(${expired.length}) Task Meister`;
 			} else {
-				document.title = 'reminder-project';
+				document.title = 'Task Meister';
 			}
 		}
 		saveToLocalStorage('reminder', reminders.list);
