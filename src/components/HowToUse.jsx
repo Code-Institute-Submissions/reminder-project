@@ -32,6 +32,12 @@ const HowToUse = () => {
 					catalogue of which tasks you completed versus which you have not. Like with the expired reminders, removal of any 
 					non-needed done reminders is encouraged.
 				</p>
+				<p className='text-style'>
+					<b>
+						Note! The web notification will not show up if you have the tab closed! In order to circumvent this, I suggest 
+						keeping the tab containing the site open when running a reminder.
+					</b>
+				</p>
 			</div>
 		</section>
 	);
