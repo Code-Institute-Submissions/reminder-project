@@ -33,7 +33,7 @@ const Footer = () => {
 				<p className='copyright'>
 					Copyright © 2020
 					<span>
-						<a href='index.html'>Reminder Project</a>
+						<a href='index.html'>Task Meister</a>
 					</span>
 					. All rights reserved.
 				</p>
