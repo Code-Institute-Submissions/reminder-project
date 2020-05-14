@@ -41,7 +41,7 @@ body {
 }
 
 .li-item {
-    width: 8rem;
+    width: 6rem;
     height: 4.5rem;
     box-shadow: 4px 0 10px -3px #010101;
     background: var(--bg-topbar);
@@ -51,17 +51,6 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-}
-
-.li-link {
-    display: grid;
-    box-sizing: border-box;
-    color: var(--text-head);
-    font-weight: 600;
-    text-decoration: none;
-    text-align: center;
-    padding: 15px;
-    align-items: center;
 }
 
 .first-item {
@@ -74,10 +63,6 @@ body {
 
 /* Theme Changer */
 
-.theme-changer {
-    margin-left: 10px;
-}
-
 .theme-icon {
     font-size: 50px;
 }
@@ -87,25 +72,15 @@ body {
 .intro-panel {
     height: 30vh;
     margin: 5rem 3rem 0 5rem;
-    display: grid;
-    grid-template-columns: 250px auto;
-    grid-auto-rows: minmax(150px, 10rem);
-    grid-template-areas: 
-        "img heading"
-        "img text";
-}
-
-.panel-img {
-    grid-area: img;
+    text-align: center;
 }
 
 .panel-heading {
-    grid-area: heading;
     font-weight: 800;
+    margin-bottom: 4rem;
 }
 
 .panel-text {
-    grid-area: text;
     font-weight: 600;
 }
 
@@ -166,8 +141,8 @@ body {
 
 .close-form {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -2px;
+    right: -1px;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -221,32 +196,33 @@ body {
 
 /* Card */
 
+.wrapper {
+    display: grid;
+}
+
 .card {
     display: flex;
     flex-wrap: wrap;
 }
 
 .card-container {
+    align-items: center;
+    padding-left: 5px;
     position: relative;
     border-radius: 10px;
     box-shadow: 0px 5px 10px rgb(71, 71, 71);
     display: grid;
-    width: 40%;
-    height: 70%;
-    margin-left: 14px;
+    width: 350px;
+    height: 120px;
+    color: var(--text-body);
+    background: var(--bg-card);
+    margin-left: 12px;
     margin-right: 12px;
     margin-bottom: 2rem;
     grid-template-areas: 
         "name-heading name name"
         "date-heading date date"
         "countdown-h countdown countdown";
-}
-
-.card-container {
-    width: 350px;
-    height: 120px;
-    color: var(--text-body);
-    background: var(--bg-card);
 }
 
 .card-delete-btn {
@@ -282,15 +258,43 @@ body {
 }
 
 .card-content {
+    width: 100%;
     padding: 5px;
 }
 
 .card-name {
     grid-area: name;
+    overflow: hidden;
+    white-space: nowrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    max-width: 200px;
 }
 
 .card-date {
     grid-area: date;
+}
+
+.show-full-name {
+    position: absolute;
+    top: 35px;
+    left: 15px;
+    max-width: calc(100% - 30px);
+    width: auto;
+    height: fit-content;
+    word-wrap: break-word;
+    color: var(--full-name-body);
+    background: var(--bg-full-name);
+    border: 3px solid var(--bg-full-name);
+    border-radius: 9px;
+    width: minmax(0, 300px);
+    z-index: 999;
+}
+
+.colon {
+    display: inline-block;
+    margin: 0 2px;
 }
 
 /* How To Use */
@@ -363,9 +367,9 @@ body {
     --gray5: #2a2e35;
     --gray6: #12181b;
     --lightblue: lightblue;
-    --lightgreen: lightgreen;
-    --darkgreen: rgb(14, 73, 14);
-    --lavender: rgb(214, 214, 250);
+    --lightgreen: rgb(132, 223, 132);
+    --darkgreen: rgb(18, 90, 18);
+    --bg-intro-color: #a1b4c5;
     --divide-line: #e0dede;
     --bg-quotes-light: #f1f1f1f1;
     --bg-quotes-dark: #3e4449;
@@ -384,7 +388,7 @@ body {
 }
 
 .light {
-    --bg-intro: var(--lavender);
+    --bg-intro: var(--bg-intro-color);
     --bg-body: var(--gray0);
     --bg-topbar: var(--lightblue);
     --bg-slideshow: var(--bg-quotes-light);
@@ -401,6 +405,8 @@ body {
     --bg-list: var(--bg-list-light);
     --bg-expired: var(--bg-expired-light);
     --bg-done: var(--bg-done-light);
+    --bg-full-name: var(--gray0);
+    --full-name-body: var(--gray6);
 }
 
 .dark {
@@ -421,6 +427,8 @@ body {
     --bg-list: var(--bg-list-dark);
     --bg-expired: var(--bg-expired-dark);
     --bg-done: var(--bg-done-dark);
+    --bg-full-name: var(--gray4);
+    --full-name-body: var(--gray0);
 }
 
 /* Hover and Focus */
@@ -435,6 +443,46 @@ body {
 .close-form:hover,
 .del-list:hover,
 .li-link:hover,
-.li-item:hover {
+.li-item:hover,
+.link-item:hover {
     color: rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries */
+
+@media(max-width: 767px) {
+    .container {
+        margin: 1rem .5rem 0 1rem;
+    }
+
+    .card-container {
+        width: 330px;
+    }
+
+    .card-name {
+        max-width: 180px;
+    }
+
+    .form-container {
+        top: 100px;
+        left: calc(50% - 165px);
+    }
+
+    .header-background {
+        padding-bottom: 5px;
+    }
+
+    .intro-panel {
+        height: fit-content;
+        margin-top: 0;
+    }
+
+    .panel-text {
+        margin-bottom: 10px;
+    }
+
+    .li-item {
+        width: 4rem;
+        height: 3.5rem;
+    }
 }

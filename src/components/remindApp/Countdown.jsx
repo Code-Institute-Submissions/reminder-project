@@ -95,9 +95,11 @@ function Countdown(props) {
 
 	return (
 		<>
-			{(countdownTimer.hours < 10) ? `0${countdownTimer.hours}` : countdownTimer.hours};
-			{(countdownTimer.minutes < 10) ? `0${countdownTimer.minutes}` : countdownTimer.minutes};
-			{(countdownTimer.seconds < 10) ? `0${countdownTimer.seconds}` : countdownTimer.seconds};
+			{(countdownTimer.hours < 10) ? `0${countdownTimer.hours}` : countdownTimer.hours}
+			<span className='colon'>:</span>
+			{(countdownTimer.minutes < 10) ? `0${countdownTimer.minutes}` : countdownTimer.minutes}
+			<span className='colon'>:</span>
+			{(countdownTimer.seconds < 10) ? `0${countdownTimer.seconds}` : countdownTimer.seconds}
 		</>
 	);
 }

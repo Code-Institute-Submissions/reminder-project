@@ -35,7 +35,7 @@ function List(props) {
 			setReminders({update: !reminders.update, list: newList});
 		}
 		if (what === ListType.running) {
-			const newList = reminders.list.filter((x) => (y.done === true || (x.done === false && x.expired === true))) ?? [];
+			const newList = reminders.list.filter((x) => (x.done === true || (x.done === false && x.expired === true))) ?? [];
 			setReminders({update: !reminders.update, list: newList});
 		}
 	}
@@ -48,10 +48,12 @@ function List(props) {
 					<label className='list-label'>{name}</label>
 					<FaWindowClose className='del-list' onClick={() => deleteList(props.listType)} />
 				</div>
-				<div className='card'>
-					{props.list.map((item) => (
-						<Card key={item.id} id={item.id} />
-					))}
+				<div className="wrapper">
+					<div className='card'>
+						{props.list.map((item) => (
+							<Card key={item.id} id={item.id} />
+						))}
+					</div>
 				</div>
 			</div>
 		}

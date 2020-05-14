@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import { MdAddAlarm } from 'react-icons/md';
 
 const Header = (props) => {
 	const iconCode = () => {
@@ -14,12 +15,12 @@ const Header = (props) => {
 		<header className='header-background'>
 			<div className='top-bar-container'>
 				<ul className='top-bar'>
-					<li className='li-item li-link first-item start-app' onClick={() => props.handleForm(true)}>
-						Create new
+					<li className='li-item first-item start-app' onClick={() => props.handleForm(true)}>
+						<MdAddAlarm className='theme-icon' />
 					</li>
 					<li 
 						id='theme-id'
-						className='li-item theme-changer theme-icon'
+						className='li-item theme-icon'
 						onClick={() => props.handleTheme(!props.isDark)}
 					>
 						{iconCode()}
@@ -27,17 +28,11 @@ const Header = (props) => {
 				</ul>
 			</div>
 			<div className='intro-panel'>
-				<img src='#' alt='#' className='panel-img' />
 				<h1 className='panel-heading'>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					remind-project
 				</h1>
 				<p className='panel-text'>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna
-					aliqua. Diam maecenas ultricies mi eget. Vitae sapien
-					pellentesque habitant morbi tristique senectus. Vitae semper
-					quis lectus nulla at volutpat. Odio ut sem nulla pharetra
-					diam sit amet nisl suscipit.
+					Never forget another task again!
 				</p>
 			</div>
 		</header>
