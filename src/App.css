@@ -162,8 +162,8 @@ body {
 
 .close-form {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -2px;
+    right: -1px;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -237,11 +237,9 @@ body {
     height: 120px;
     color: var(--text-body);
     background: var(--bg-card);
-    margin-left: 14px;
+    margin-left: 12px;
     margin-right: 12px;
     margin-bottom: 2rem;
-    word-wrap: break-word;
-    word-break: break-all;
     grid-template-areas: 
         "name-heading name name"
         "date-heading date date"
@@ -287,10 +285,37 @@ body {
 
 .card-name {
     grid-area: name;
+    overflow: hidden;
+    white-space: nowrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    max-width: 200px;
 }
 
 .card-date {
     grid-area: date;
+}
+
+.show-full-name {
+    position: absolute;
+    top: 35px;
+    left: 15px;
+    max-width: calc(100% - 30px);
+    width: auto;
+    height: fit-content;
+    word-wrap: break-word;
+    color: var(--full-name-body);
+    background: var(--bg-full-name);
+    border: 3px solid var(--bg-full-name);
+    border-radius: 9px;
+    width: minmax(0, 300px);
+    z-index: 999;
+}
+
+.colon {
+    display: inline-block;
+    margin: 0 2px;
 }
 
 /* How To Use */
@@ -401,6 +426,8 @@ body {
     --bg-list: var(--bg-list-light);
     --bg-expired: var(--bg-expired-light);
     --bg-done: var(--bg-done-light);
+    --bg-full-name: var(--gray1);
+    --full-name-body: var(--gray6);
 }
 
 .dark {
@@ -421,6 +448,8 @@ body {
     --bg-list: var(--bg-list-dark);
     --bg-expired: var(--bg-expired-dark);
     --bg-done: var(--bg-done-dark);
+    --bg-full-name: var(--gray4);
+    --full-name-body: var(--gray0);
 }
 
 /* Hover and Focus */
@@ -445,6 +474,19 @@ body {
 @media(max-width: 767px) {
     .container {
         margin: 1rem .5rem 0 1rem;
+    }
+
+    .card-container {
+        width: 330px;
+    }
+
+    .card-name {
+        max-width: 180px;
+    }
+
+    .form-container {
+        top: 100px;
+        left: calc(50% - 165px);
     }
 
     .header-background {
