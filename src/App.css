@@ -119,9 +119,8 @@ body {
     width: 90%;
     border: 0;
     padding: 3px;
-    background: var(--bg-form);
-    color: var(--text-body);
-    border-bottom: 1px solid var(--text-body);
+    background: white;
+    color: black;
 }
 
 .form-btn {

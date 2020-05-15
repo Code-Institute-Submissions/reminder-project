@@ -6,9 +6,9 @@ import { MdAddAlarm } from 'react-icons/md';
 const Header = (props) => {
 	const iconCode = () => {
 		if (props.isDark) {
-			return <FaSun id='icon' />;
+			return <FaSun id='icon' alt='Change into dark mode button' />;
 		}
-		return <FaMoon id='icon' />;
+		return <FaMoon id='icon' alt='Change into light mode button' />;
 	};
 
 	return (
@@ -16,7 +16,7 @@ const Header = (props) => {
 			<div className='top-bar-container'>
 				<ul className='top-bar'>
 					<li className='li-item first-item start-app' onClick={() => props.handleForm(true)}>
-						<MdAddAlarm className='theme-icon' />
+						<MdAddAlarm className='theme-icon' alt='Add reminder button' />
 					</li>
 					<li 
 						id='theme-id'
