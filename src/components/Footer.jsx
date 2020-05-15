@@ -10,6 +10,7 @@ const Footer = () => {
 					<li className='social-item'>
 						<a 
 							className='link-item' 
+							target='_blank'
 							href='https://github.com/Zylashro' 
 							rel='noopener noreferrer' 
 							alt='GitHub Link'
@@ -19,7 +20,8 @@ const Footer = () => {
 					</li>
 					<li className='social-item'>
 						<a 
-							className='link-item' 
+							className='link-item'
+							target='_blank'
 							href='https://www.linkedin.com/in/dominik-jug-3aa2971a0/' 
 							rel='noopener noreferrer' 
 							alt='LinkedIn Link'
@@ -31,7 +33,7 @@ const Footer = () => {
 			</div>
 			<div>
 				<p className='copyright'>
-					Copyright © 2020
+					Copyright © 2020&nbsp;
 					<span>
 						<a href='index.html'>Task Meister</a>
 					</span>
