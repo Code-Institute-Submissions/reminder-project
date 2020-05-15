@@ -96,7 +96,7 @@ The result of the HTML Validator can be seen in the image below:
 
 The results of the CSS Validator can be seen in the image below:
 
-![CSS Validation](designDocs/validators/remind-css.PNG)
+![CSS Validation](designDocs/validators/reminder-css.PNG)
 
 Note!: On inspection of the errors, it seems that every error is related to CSS variables that I used to make the switch between light and dark more easier.
 
@@ -109,10 +109,6 @@ The website was tested on these browsers:
 ## Deployment
 
 The deployment of the project was done entirely with **GitHub Pages**.
-
-The published source code can be found in [**this repository**](https://github.com/Zylashro/barbershop).
-
-And the finished, live website can be found [**here**](https://zylashro.github.io/barbershop/).
 
 ## Self-Reflection
 
