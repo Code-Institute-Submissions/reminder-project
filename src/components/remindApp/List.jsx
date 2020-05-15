@@ -4,9 +4,26 @@ import Card from './Card';
 import { ReminderContext } from './RemindApp';
 import { ListType } from '../../utils/Constants';
 import { FaWindowClose } from 'react-icons/fa';
+import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
+
+import { loadFromLocalStorage, saveToLocalStorage } from '../../utils/HandleLocalStorage';
 
 function List(props) {
 	const { reminders, setReminders } = React.useContext(ReminderContext);
+
+	const [isShown, setIsShown] = React.useState(() => (loadFromLocalStorage('isShown') ?? false));
+
+	function handleShown(show) {
+		setIsShown(show);
+		saveToLocalStorage('isShown', show);
+	}
+
+	const showMore = () => {
+		if (isShown) {
+			return <IoMdArrowDropup className='show-more-btn' value={{ size: "50px" }} onClick={() => handleShown(!isShown)} />;
+		}
+		return <IoMdArrowDropdown className='show-more-btn' value={{ size: "50px" }} onClick={() => handleShown(!isShown)} />;
+	};
 
 	/**
 	 *  TBW
@@ -45,11 +62,12 @@ function List(props) {
 		{(props.list.length > 0) && 
 			<div className={`list-container list-${props.listType}`}>
 				<div className='list-heading'>
-					<label className='list-label'>{name}</label>
-					<FaWindowClose className='del-list' onClick={() => deleteList(props.listType)} />
+					<div className='list-label'>{name}</div>
+					<div className='list-delete'><FaWindowClose onClick={() => deleteList(props.listType)} /></div>
+					<div className='list-toggle'>{showMore()}</div>
 				</div>
 				<div className="wrapper">
-					<div className='card'>
+					<div className={isShown ? 'card' : 'hidden'}>
 						{props.list.map((item) => (
 							<Card key={item.id} id={item.id} />
 						))}

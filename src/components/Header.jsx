@@ -1,26 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Logo from './Logo';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { MdAddAlarm } from 'react-icons/md';
+import { BsInfoCircle } from 'react-icons/bs';
 
 const Header = (props) => {
 	const iconCode = () => {
 		if (props.isDark) {
-			return <FaSun id='icon' alt='Change into dark mode button' />;
+			return <FaSun id='icon' className='icon' alt='Change into dark mode button' />;
 		}
-		return <FaMoon id='icon' alt='Change into light mode button' />;
+		return <FaMoon id='icon' className='icon' alt='Change into light mode button' />;
 	};
 
 	return (
 		<header className='header-background'>
 			<div className='top-bar-container'>
 				<ul className='top-bar'>
-					<li className='li-item first-item start-app' onClick={() => props.handleForm(true)}>
-						<MdAddAlarm className='theme-icon' alt='Add reminder button' />
+					<li
+						className='li-item first-item start-app'
+						onClick={() => props.handleForm(true)}
+					>
+						<MdAddAlarm
+							className='icon'
+							alt='Add reminder button'
+						/>
 					</li>
-					<li 
+					<li
+						className='li-item'
+						onClick={() => props.handleVisibility(!props.isHidden)}
+					>
+						<BsInfoCircle className='icon' />
+					</li>
+					<li
 						id='theme-id'
-						className='li-item theme-icon'
+						className='li-item'
 						onClick={() => props.handleTheme(!props.isDark)}
 					>
 						{iconCode()}
@@ -28,12 +42,7 @@ const Header = (props) => {
 				</ul>
 			</div>
 			<div className='intro-panel'>
-				<h1 className='panel-heading'>
-					Task Meister
-				</h1>
-				<p className='panel-text'>
-					Never forget another task again!
-				</p>
+				<Logo className='logo' />
 			</div>
 		</header>
 	);
