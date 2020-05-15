@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "42ee0cdde7d48342ad8ad6995fd3c264",
+    "revision": "75d990d5c00edccb0c1015cdd3232917",
     "url": "/reminder-project/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reminder-project/static/css/2.ecffae5e.chunk.css"
   },
   {
-    "revision": "06d23e761d1fab4475f7",
-    "url": "/reminder-project/static/css/main.6ef93dee.chunk.css"
+    "revision": "29c1b434e25beef8ad6a",
+    "url": "/reminder-project/static/css/main.d943c1d3.chunk.css"
   },
   {
     "revision": "c97bcbc849c3f4e018f5",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reminder-project/static/js/2.8f74bee3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "06d23e761d1fab4475f7",
-    "url": "/reminder-project/static/js/main.7ca91fb1.chunk.js"
+    "revision": "29c1b434e25beef8ad6a",
+    "url": "/reminder-project/static/js/main.9fcd8c3d.chunk.js"
   },
   {
     "revision": "91f6ce202ad08139328e",
