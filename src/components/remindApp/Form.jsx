@@ -37,11 +37,12 @@ function Form(props) {
 				className='form-input'
 				type='text'
 				name='name'
+				placeholder='Reminder name...'
 				onChange={(e) => setReminderName(e.target.value)}
 			/>
 
 			<label htmlFor='expTime' className='form-label'>
-				Select time:
+				Select expiration time:
 			</label>
 			<DatePicker 
 				selected={reminderTime}
