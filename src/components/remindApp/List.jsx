@@ -66,12 +66,10 @@ function List(props) {
 					<div className='list-delete'><FaWindowClose onClick={() => deleteList(props.listType)} /></div>
 					<div className='list-toggle'>{showMore()}</div>
 				</div>
-				<div className="wrapper">
-					<div className={isShown ? 'card' : 'hidden'}>
-						{props.list.map((item) => (
-							<Card key={item.id} id={item.id} />
-						))}
-					</div>
+				<div className={isShown ? 'card' : 'hidden'}>
+					{props.list.map((item) => (
+						<Card key={item.id} id={item.id} />
+					))}
 				</div>
 			</div>
 		}

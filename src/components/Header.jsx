@@ -15,6 +15,9 @@ const Header = (props) => {
 
 	return (
 		<header className='header-background'>
+			<div className='logo-container'>
+				<Logo />
+			</div>
 			<div className='top-bar-container'>
 				<ul className='top-bar'>
 					<li
@@ -40,9 +43,6 @@ const Header = (props) => {
 						{iconCode()}
 					</li>
 				</ul>
-			</div>
-			<div className='intro-panel'>
-				<Logo className='logo' />
 			</div>
 		</header>
 	);

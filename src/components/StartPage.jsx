@@ -14,6 +14,7 @@ const StartPage = () => {
 	function handleVisibility(visible) {
 		setIsHidden(visible);
 		saveToLocalStorage('isHidden', visible);
+		window.scrollTo(0, 0);
 	}
 
 	function handleTheme(theme) {
@@ -24,7 +25,7 @@ const StartPage = () => {
 	return (
 		<div className={isDark ? 'dark app-container' : 'light app-container'}>
 			<Header isDark={isDark} handleTheme={handleTheme} isHidden={isHidden} handleVisibility={handleVisibility} handleForm={setFormActive} />
-			<HowToUse isHidden={isHidden} handleVisibility={handleVisibility} />
+			{isHidden && <HowToUse />}
 			<RemindApp formActive={formActive} handleForm={setFormActive} />
 			<Footer />
 		</div>

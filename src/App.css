@@ -26,6 +26,9 @@ body {
 /* Header */
 
 .header-background {
+    height: 100px;
+    overflow: hidden;
+    margin-bottom: 20px;
     background: var(--bg-intro);
 }
 
@@ -77,10 +80,9 @@ body {
 
 /* Intro Panel */
 
-.intro-panel {
-    height: 50px;
-    text-align: center;
-    fill: var(--text-body);
+.logo-container {
+    height: 100px;
+    overflow: hidden;
 }
 
 .panel-heading {
@@ -93,7 +95,8 @@ body {
 }
 
 .logo {
-    top: 0;
+    width: 500px;
+    fill: var(--text-body);
 }
 
 /* App */
@@ -171,8 +174,12 @@ body {
 /* List */
 
 .list-container {
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    overflow: hidden;
     margin: 10px;
-    border-radius: 30px;
+    padding: 0 10px 10px;
+    border-radius: 10px;
     background: var(--bg-list);
 }
 
@@ -228,13 +235,13 @@ body {
 
 /* Card */
 
-.wrapper {
-    display: grid;
-}
-
 .card {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* grid-auto-flow: column; */
+    /* grid-auto-columns: minmax(320px, 350px); */
+    column-gap: 10px;
+    row-gap: 10px;
 }
 
 .card-container {
@@ -243,83 +250,67 @@ body {
     position: relative;
     border-radius: 10px;
     display: grid;
-    width: 350px;
+    width: 100%;
     height: 120px;
     color: var(--text-body);
     background: var(--bg-card);
-    margin-left: 12px;
-    margin-right: 12px;
-    margin-bottom: 2rem;
-    grid-template-areas: 
-        "name-heading name name"
-        "date-heading date date"
-        "countdown-h countdown countdown";
+    grid-template-columns: max-content 1fr 40px;
+    grid-template-rows: 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 5px;
 }
 
 .card-delete-btn {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 5px;
     width: 30px;
     height: 30px;
-    padding-top: 5px;
     color: var(--del-btn);
     cursor: pointer;
 }
 
 .card-complete-btn {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 5px;
+    right: 5px;
     width: 30px;
     height: 30px;
-    padding-bottom: 5px;
     color: var(--com-btn);
     cursor: pointer;
 }
 
-.card-delete-btn,
-.card-complete-btn {
-    padding-right: 5px;
-}
-
 .card-heading {
     font-weight: 600;
-    padding: 5px;
 }
 
 .card-content {
     width: 100%;
-    padding: 5px;
 }
 
 .card-name {
-    grid-area: name;
     overflow: hidden;
     white-space: nowrap;
     overflow-wrap: break-word;
     word-wrap: break-word;
     text-overflow: ellipsis;
-    max-width: 200px;
-}
-
-.card-date {
-    grid-area: date;
+    /* max-width: 200px; */
 }
 
 .show-full-name {
     position: absolute;
-    top: 35px;
-    left: 15px;
-    max-width: calc(100% - 30px);
-    width: auto;
+    bottom: 103px;
+    left: 5px;
+    box-sizing: border-box;
+    width: calc(100% - 45px);
+    /* width: auto; */
     height: fit-content;
+    padding: 3px 5px;
     word-wrap: break-word;
     color: var(--full-name-body);
     background: var(--bg-full-name);
-    border: 3px solid var(--bg-full-name);
-    border-radius: 9px;
-    width: minmax(0, 300px);
+    border-radius: 5px;
+    font-size: 14px;
     z-index: 999;
 }
 
@@ -331,7 +322,7 @@ body {
 /* How To Use */
 
 .container {
-    margin: 2rem 5rem 2rem 5rem;
+    margin: 2rem 5rem 2rem;
     align-items: center;
 }
 
@@ -495,10 +486,6 @@ body {
         font-size: 35px;
     }
 
-    .card-container {
-        width: 330px;
-    }
-
     .card-name {
         max-width: 180px;
     }
@@ -508,13 +495,13 @@ body {
         left: calc(50% - 165px);
     }
 
-    .header-background {
-        padding-bottom: 5px;
+    .header-background,
+    .logo-container {
+        height: 50px;
     }
 
-    .intro-panel {
-        height: fit-content;
-        margin-top: 0;
+    .logo {
+        width: 250px;
     }
 
     .panel-heading {
