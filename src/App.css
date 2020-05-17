@@ -46,15 +46,15 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin: .5em 1.5em;
+    margin: 8px 24px;
     list-style-type: none;
     transition: top .3s ease;
     z-index: 999;
 }
 
 .li-item {
-    width: 6rem;
-    height: 4.5rem;
+    width: 96px;
+    height: 72px;
     background: var(--bg-topbar);
     color: var(--text-head);
     display: flex;
@@ -83,15 +83,6 @@ body {
 .logo-container {
     height: 100px;
     overflow: hidden;
-}
-
-.panel-heading {
-    font-weight: 800;
-    margin-bottom: 3rem;
-}
-
-.panel-text {
-    font-weight: 600;
 }
 
 .logo {
@@ -145,7 +136,7 @@ body {
     margin: 10px auto 5px;
     border-radius: 5px;
     border: 0;
-    height: 2.24rem;
+    height: 36px;
     padding: 0 30px;
     text-transform: uppercase;
     text-decoration: none;
@@ -196,7 +187,7 @@ body {
     grid-template-columns: 120px auto 60px;
     align-items: center;
     column-gap: 10px;
-    margin-left: 1rem;
+    margin-left: 16px;
     padding: 15px;
     font-weight: 700;
 }
@@ -238,8 +229,6 @@ body {
 .card {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    /* grid-auto-flow: column; */
-    /* grid-auto-columns: minmax(320px, 350px); */
     column-gap: 10px;
     row-gap: 10px;
 }
@@ -322,23 +311,19 @@ body {
 /* How To Use */
 
 .container {
-    margin: 2rem 5rem 2rem;
+    margin: 0 32px;
     align-items: center;
-}
-
-.how-to-use--container {
-    margin-bottom: 5rem;
 }
 
 .heading {
     font-weight: 700;
     text-align: center;
-    padding-top: 2rem;
-    margin-bottom: 3rem;
+    padding-top: 32px;
+    margin-bottom: 48px;
 }
 
 .text-style {
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
 /* Footer */
@@ -366,7 +351,7 @@ body {
 }
 
 .social-item {
-    padding: 1rem;
+    padding: 16px;
     font-size: 50px;
 }
 
@@ -474,7 +459,7 @@ body {
 
 @media(max-width: 767px) {
     .container {
-        margin: 1rem .5rem 0 1rem;
+        margin: 16px 8px 0 16px;
     }
 
     .top-bar {
@@ -505,7 +490,7 @@ body {
     }
 
     .panel-heading {
-        margin-bottom: 1rem;
+        margin-bottom: 16px;
     }
 
     .panel-text {
@@ -513,7 +498,7 @@ body {
     }
 
     .li-item {
-        width: 4rem;
-        height: 3.5rem;
+        width: 64px;
+        height: 56px;
     }
 }
