@@ -29,7 +29,7 @@ body {
     height: 100px;
     overflow: hidden;
     margin-bottom: 20px;
-    background: var(--bg-intro);
+    background: var(--bg-header-footer);
 }
 
 /* Top-bar */
@@ -78,7 +78,7 @@ body {
     font-size: 50px;
 }
 
-/* Intro Panel */
+/* Logo */
 
 .logo-container {
     height: 100px;
@@ -332,7 +332,7 @@ body {
     align-self: end;
     padding: 15px 15px 5px 15px;
     color: var(--text-body);
-    background: var(--bg-intro);
+    background: var(--bg-header-footer);
     text-align: center;
 }
 
@@ -377,7 +377,7 @@ body {
     --lightblue: lightblue;
     --lightgreen: rgb(132, 223, 132);
     --darkgreen: rgb(18, 90, 18);
-    --bg-intro-color: #a1b4c5;
+    --bg-header-footer-color: #a1b4c5;
     --divide-line: #e0dede;
     --bg-quotes-light: #f1f1f1f1;
     --bg-quotes-dark: #3e4449;
@@ -396,10 +396,9 @@ body {
 }
 
 .light {
-    --bg-intro: var(--bg-intro-color);
+    --bg-header-footer: var(--bg-header-footer-color);
     --bg-body: var(--gray0);
     --bg-topbar: var(--lightblue);
-    --bg-slideshow: var(--bg-quotes-light);
     --text-head: var(--gray0);
     --text-body: var(--gray6);
     --text-slideshow: var(--gray6);
@@ -418,10 +417,9 @@ body {
 }
 
 .dark {
-    --bg-intro: var(--gray3);
+    --bg-header-footer: var(--gray3);
     --bg-body: var(--gray5);
     --bg-topbar: var(--gray4);
-    --bg-slideshow: var(--bg-quotes-dark);
     --text-head: var(--gray0);
     --text-body: var(--gray0);
     --text-slideshow: var(--gray0);
@@ -439,7 +437,7 @@ body {
     --full-name-body: var(--gray0);
 }
 
-/* Hover and Focus */
+/* Hover */
 
 .form-btn:hover {
     background: var(--bg-hover-form-btn);
