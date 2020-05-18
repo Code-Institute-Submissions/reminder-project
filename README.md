@@ -1,5 +1,3 @@
-![How the site should look on multiple different screen sizes](designDocs/)
-
 [Live Site](https://zylashro.github.io/reminder-project/)
 
 # Task Meister
@@ -17,6 +15,7 @@ This project is designed as an alert system website that notifies the user when 
     - [**HTML Validator**](#html-validator)
     - [**CSS Validator**](#css-validator)
     - [**Browsers**](#browsers)
+    - [**Automated Testing**](#automated-testing)
 6. [**Deployment**](#deployment)
 7. [**Self-Reflection**](#self-reflection)
 8. [**Credits**](#credits)
@@ -34,6 +33,7 @@ This project is a single page website that I am using to display my skills and k
 ### User Stories
 
 - The user is able to know how to use the app with a clear and upfront "How To Use" section.
+- The user is able to hide the "How To Use" section by clicking the information icon in the upper right corner.
 - The user is able to add a reminder with an eye-catching and visible button.
 - The user is able to both name, and set the expiration date for each individual reminder.
 - The user is able to click the name of each reminder to see a popout with the full reminder name in case the set name is too long.
@@ -44,6 +44,7 @@ This project is a single page website that I am using to display my skills and k
 - The user is able to mark a reminder as "done".
 - The user is able to see when they marked a reminder as "done".
 - The user is able to see all their reminders—expired, done, and still running—in their own separate lists.
+- The user is able to collapse the content of each list to minimize scrolling.
 - The user is able to remove the entire list, and with it all the reminders within, instead of having to remove each reminder individually.
 - The user will be notified by the site when a reminder has expired.
 - The user is able to see that a reminder has expired by a change in the tab title documenting how many reminders had expired.
@@ -52,15 +53,17 @@ This project is a single page website that I am using to display my skills and k
 ## Features
 
 1. Responsive design.
-2. Form popout.
-3. Form validation.
-4. Dynamically created reminders.
-5. Dynamically created lists.
-6. Live countdown.
-7. Ability to remove either an individual reminder or entire list.
-8. Ability to mark a reminder as done.
-9. Reminders are saved to the local storage, allowing the site to keep its intended functionality even if the user has closed the tab or turned-off their device.
-10. Ability to clear the local storage by removing reminders.
+2. Hide-able information section.
+3. Form popout.
+4. Form validation.
+5. Dynamically created reminders.
+6. Dynamically created lists.
+7. Live countdown.
+8. Ability to remove either an individual reminder or entire list.
+9. Ability to mark a reminder as done.
+10. Collapse-able list content. 
+11. Reminders are saved to the local storage, allowing the site to keep its intended functionality even if the user has closed the tab or turned-off their device.
+12. Ability to clear the local storage by removing reminders.
 
 ## Technologies
 
@@ -82,7 +85,7 @@ Along with the various technologies used to make this project, I had to resort t
 - **[React-datepicker](https://github.com/Hacker0x01/react-datepicker):** A neat dependency which is responsible for the date-picker on this project.
 - **[React-icons](https://react-icons.github.io/react-icons/):** The dependency responsible for the implementation of all the icons used in the project.
 - **[React-web-notification](https://github.com/mobilusoss/react-web-notification/tree/develop):** The dependency used for creating the web notification the user gets when one of their reminders expires.
-- **[Testing Library](https://testing-library.com/):** The testing dependency used to create the tests for this project.
+- **gh-pages** The dependency required in order to host this project on GitHub Pages.
 
 ## Testing
 
@@ -105,10 +108,37 @@ Note!: On inspection of the errors, it seems that every error is related to CSS 
 The website was tested on these browsers:
 
 1. Chrome
+2. Edge
+3. Internet explorer
+
+The website works as intended on both Crome and Edge while on IE the site is completely devoid of all its CSS styling.
+
+### Automated Testing
+
+For this project it was asked of me to practice Test Driven Development and use a testing library such as Jasmine, or in the case of React the pre-built-in Jest. It is suffice to say that I did not do so.
+
+While learning React for this project did take away time that I would have otherwise spent on developing tests, I will not use that fact to deflect my own shortcoming in this regard.
+
+For one reason or another, the entire process of writing tests made little sense to me. And by that I mean how one goes about writing tests just didn't click with me. I couldn't wrap my head around how to write tests. Instead of spending a lot of time figuring that out, I pressed on with writing the code, thinking that I'd write some tests after the fact. But, here I am with no tests to show for it.
+
+Looking at my code now, I can't even imagine on where to begin testing or how. I firmly believe that if I had spent some time practicing test writing with some very simple and basic code then this area of the project could have been bettered in every sense of the word.
+
+For the immediate future, I know what I need to work on and how to tackle that issue in order to fill in the gaps in my knowledge.
+
+Saying that, I have manually tested every aspect of the project numerous times without an issue.
 
 ## Deployment
 
 The deployment of the project was done entirely with **GitHub Pages**.
+
+In order to deploy the project onto GitHub Pages I had to do the following steps:
+
+1. Install the gh-pages React dependency by running `npm install gh-pages --save` in my terminal.
+2. Adding both `"predeploy": "npm run build"` and `"deploy": "gh-pages -d build"` under scripts in the package.json file.
+3. Pushed all necessary changes to the master branch.
+4. Ran `npm run deploy` in my terminal in order for React to deploy a stable build of the project.
+5. In the GitHub repository of the project, I navigated to the "Settings" tab and scrolled down until I found the section labeled "GitHub Pages".
+6. For the source of the page I selected the "gh-pages-branch" which was created in step 4. of the deployment process. 
 
 ## Self-Reflection
 
@@ -120,7 +150,7 @@ But, by the far the biggest change to come to this project was the decision to u
 
 Originally this project started out in vanilla JS and close to a week into the development, I had a friend recommend that I use React after hearing just what I was trying to do. His reasoning? React more or less excels at the type of dynamic UI generation which I required. I took two weeks reading the React documentation, and all kinds of articles and videos I could find to bring me up to speed with all the relative information for my project as well as playing around with code. And I firmly believe that the results speak for themselves.
 
-My only real regret with the project is the testing. For some reason, the entire TDD implementation completely flew over my head. I tried to get a good understanding of it, but it just alluded me. 
+My only real regret with the project is the testing. For some reason, the entire TDD implementation completely flew over my head. I tried to get a good understanding of it, but it just alluded me. For more details, I'd recommend reading the [automated testing](#automated-testing) section of the document.
 
 If this project taught me anything, is that testing is by far my weakest area and one that I will be actively trying to improve. And that at times you have to switch tools to the ones more geared towards what you want to accomplished with a project and what you require in order to see it to fruition. 
 
