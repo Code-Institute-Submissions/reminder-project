@@ -29,7 +29,7 @@ function Form(props) {
 	}
 
 	return (
-		<div className='container form-container'>
+		<form className='container form-container'>
 			<label htmlFor='name' className='form-label'>
 				Set a name:
 			</label>
@@ -70,7 +70,7 @@ function Form(props) {
 				className='close-form' 
 				onClick={() => props.handleForm(false)}
 			/>
-		</div>
+		</form>
 	);
 }
 
