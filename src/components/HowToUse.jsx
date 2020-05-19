@@ -13,6 +13,10 @@ const HowToUse = () => {
 				task you want to be reminded of, and set at which date and time you want the reminder to go off at. 
 			</p>
 			<p className='text-style'>
+				The time table is divided into fifteen minute intervals, but if you desire for the reminder to expire sooner or 
+				later, then you can manually delete the minutes portion the time and write your own desired time. 
+			</p>
+			<p className='text-style'>
 				<b>
 					Note! You need to fill in both the name or time, otherwise a reminder will not be made.
 				</b>
