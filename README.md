@@ -36,6 +36,7 @@ This project is a single page website that I am using to display my skills and k
 - The user is able to hide the "How To Use" section by clicking the information icon in the upper right corner.
 - The user is able to add a reminder with an eye-catching and visible button.
 - The user is able to both name, and set the expiration date for each individual reminder.
+- The user is able to set a custom time by deleting the minutes and writing in their desired time instead of choosing the fifteen minute interval.
 - The user is able to click the name of each reminder to see a popout with the full reminder name in case the set name is too long.
 - The user is able to know when a reminder was created.
 - The user is able to see when a reminder had expired.
@@ -85,7 +86,7 @@ Along with the various technologies used to make this project, I had to resort t
 - **[React-datepicker](https://github.com/Hacker0x01/react-datepicker):** A neat dependency which is responsible for the date-picker on this project.
 - **[React-icons](https://react-icons.github.io/react-icons/):** The dependency responsible for the implementation of all the icons used in the project.
 - **[React-web-notification](https://github.com/mobilusoss/react-web-notification/tree/develop):** The dependency used for creating the web notification the user gets when one of their reminders expires.
-- **gh-pages** The dependency required in order to host this project on GitHub Pages.
+- **gh-pages:** The dependency required in order to host this project on GitHub Pages.
 
 ## Testing
 
