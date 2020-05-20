@@ -24,8 +24,8 @@ const StartPage = () => {
 
 	return (
 		<div className={isDark ? 'dark app-container' : 'light app-container'}>
-			<Header isDark={isDark} handleTheme={handleTheme} isHidden={isHidden} handleVisibility={handleVisibility} handleForm={setFormActive} />
-			{isHidden && <HowToUse />}
+			<Header isDark={isDark} handleTheme={handleTheme} isHidden={isHidden} handleForm={setFormActive} />
+			<HowToUse handleVisibility={handleVisibility} isHidden={isHidden} />
 			<RemindApp formActive={formActive} handleForm={setFormActive} />
 			<Footer />
 		</div>
