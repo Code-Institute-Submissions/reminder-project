@@ -29,6 +29,10 @@
     --bg-expired-dark: #421818;
     --bg-done-light: #9df8a9;
     --bg-done-dark: #183b1d;
+    --icon-expired-dark: #ff9999;
+    --icon-expired-light: #881919;
+    --icon-done-dark: #9df8a9;
+    --icon-done-light: #174d1f;
 }
 
 .light {
@@ -50,6 +54,8 @@
     --bg-done: var(--bg-done-light);
     --bg-full-name: var(--gray0);
     --full-name-body: var(--gray6);
+    --icon-expired: var(--icon-expired-light);
+    --icon-done: var(--icon-done-light);
 }
 
 .dark {
@@ -71,6 +77,8 @@
     --bg-done: var(--bg-done-dark);
     --bg-full-name: var(--gray4);
     --full-name-body: var(--gray0);
+    --icon-expired: var(--icon-expired-dark);
+    --icon-done: var(--icon-done-dark);
 }
 
 * {
@@ -152,151 +160,6 @@ body {
     color: rgba(0, 0, 0, 0.5);
 }
 
-/* List */
-
-.list-container {
-    box-sizing: border-box;
-    width: calc(100% - 20px);
-    overflow: hidden;
-    margin: 10px;
-    padding: 0 10px 10px;
-    border-radius: 10px;
-    background: var(--bg-list);
-}
-
-.list-expired .card-container {
-    background: var(--bg-expired);
-}
-
-.list-done .card-container {
-    background: var(--bg-done);
-}
-
-.list-heading {
-    display: grid;
-    grid-template-columns: 120px auto 60px;
-    align-items: center;
-    column-gap: 10px;
-    margin-left: 16px;
-    padding: 15px;
-    font-weight: 700;
-}
-
-.list-label {
-    display: block;
-    height: 30px;
-    vertical-align: middle;
-    margin-top: 3px;
-}
-
-.list-delete {
-    width: 30px;
-    height: 30px;
-    overflow: hidden;
-    cursor: pointer;
-    font-size: 30px;
-    line-height: 1;
-}
-
-.list-toggle {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    width: 60px;
-    height: 30px;
-}
-
-.show-more-btn {
-    position: absolute;
-    top: -14px;
-    left: 0;
-    font-size: 60px;
-    cursor: pointer;
-}
-
-/* Card */
-
-.card {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    column-gap: 10px;
-    row-gap: 10px;
-}
-
-.card-container {
-    align-items: center;
-    padding-left: 5px;
-    position: relative;
-    border-radius: 10px;
-    display: grid;
-    width: 100%;
-    height: 120px;
-    color: var(--text-body);
-    background: var(--bg-card);
-    grid-template-columns: max-content 1fr 40px;
-    grid-template-rows: 1fr 1fr 1fr;
-    column-gap: 10px;
-    row-gap: 5px;
-}
-
-.card-delete-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 30px;
-    height: 30px;
-    color: var(--del-btn);
-    cursor: pointer;
-}
-
-.card-complete-btn {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    width: 30px;
-    height: 30px;
-    color: var(--com-btn);
-    cursor: pointer;
-}
-
-.card-heading {
-    font-weight: 600;
-}
-
-.card-content {
-    width: 100%;
-}
-
-.card-name {
-    overflow: hidden;
-    white-space: nowrap;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    text-overflow: ellipsis;
-}
-
-.show-full-name {
-    position: absolute;
-    bottom: 103px;
-    left: 5px;
-    box-sizing: border-box;
-    width: calc(100% - 45px);
-    /* width: auto; */
-    height: fit-content;
-    padding: 3px 5px;
-    word-wrap: break-word;
-    color: var(--full-name-body);
-    background: var(--bg-full-name);
-    border-radius: 5px;
-    font-size: 14px;
-    z-index: 999;
-}
-
-.colon {
-    display: inline-block;
-    margin: 0 2px;
-}
-
 /* Footer */
 
 .footer-container {
@@ -343,7 +206,6 @@ body {
 
 .card-delete-btn:hover,
 .card-complete-btn:hover,
-.del-list:hover,
 .li-link:hover,
 .li-item:hover,
 .link-item:hover {

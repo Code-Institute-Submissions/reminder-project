@@ -1,0 +1,96 @@
+.card__container {
+    align-items: center;
+    padding-left: 5px;
+    position: relative;
+    border-radius: 10px;
+    display: grid;
+    width: 100%;
+    height: 120px;
+    color: var(--text-body);
+    background: var(--bg-card);
+    grid-template-columns: max-content 1fr 40px;
+    grid-template-rows: 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 5px;
+}
+
+.card__delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+	height: 30px;
+	overflow: hidden;
+    color: var(--del-btn);
+    cursor: pointer;
+}
+
+.card__complete-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 30px;
+	height: 30px;
+	overflow: hidden;
+    color: var(--com-btn);
+    cursor: pointer;
+}
+
+.card__icon-container {
+	width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background: #fff;
+}
+.card__icon-container:hover {
+	opacity: .5;
+}
+
+.card__icon {
+	font-size: 30px;
+	line-height: 1;
+}
+
+.card__heading {
+    font-weight: 600;
+}
+
+.card__content {
+    width: 100%;
+}
+
+.card__name {
+    overflow: hidden;
+    white-space: nowrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+.card__full-name {
+    position: absolute;
+    bottom: 103px;
+    left: 5px;
+    box-sizing: border-box;
+    width: calc(100% - 45px);
+    /* width: auto; */
+    height: fit-content;
+    padding: 3px 5px;
+    word-wrap: break-word;
+    color: var(--full-name-body);
+    background: var(--bg-full-name);
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 999;
+}
+
+.colon {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+@media(max-width: 767px) {
+    .card__name {
+        max-width: 180px;
+    }
+}
