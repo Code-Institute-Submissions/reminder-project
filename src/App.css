@@ -32,6 +32,49 @@ body {
     background: var(--bg-body);
 }
 
+/* section global styles */
+.section__heading {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    column-gap: 10px;
+}
+
+.section__icon-container {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.section__icon {
+    font-size: 40px;
+    line-height: 1;
+    color: var(--text-body);
+}
+
+.section__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-body);
+}
+
+.section__toggle {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.section__btn {
+    font-size: 40px;
+    line-height: 1;
+    color: var(--text-body);
+}
+
+.section__btn:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+
 /* Form */
 
 .form-container {
@@ -233,54 +276,6 @@ body {
 .colon {
     display: inline-block;
     margin: 0 2px;
-}
-
-/* How To Use */
-
-.container {
-    margin: 0 32px;
-    align-items: center;
-    display: grid;
-    grid-template-columns: auto;
-}
-
-.heading {
-    font-weight: 700;
-    text-align: center;
-    padding-top: 32px;
-    margin-bottom: 48px;
-}
-
-.text-style {
-    margin-bottom: 16px;
-}
-
-.clock-icon {
-    width: 500px;
-    height: 500px;
-    color: var(--text-body);
-}
-
-.heading-container {
-    display: grid;
-    align-items: center;
-    grid-column-gap: 10px;
-    column-gap: 10px;
-    font-weight: 700;
-}
-
-.list-toggle-htu {
-    display: block;
-    grid-template-columns: 120px auto 60px;
-    position: relative;
-    width: 60px;
-    height: 30px;
-}
-
-.htu-btn {
-    position: absolute;
-    font-size: 60px;
-    cursor: pointer;
 }
 
 /* Footer */
