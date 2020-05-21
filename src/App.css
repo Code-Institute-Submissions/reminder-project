@@ -23,73 +23,6 @@ body {
     height: 100%;
 }
 
-/* Header */
-
-.header-background {
-    height: 100px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background: var(--bg-header-footer);
-}
-
-/* Top-bar */
-
-.top-bar-container {
-    height: 70px;
-    width: 100%;
-}
-
-.top-bar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 8px 24px;
-    list-style-type: none;
-    transition: top .3s ease;
-    z-index: 999;
-}
-
-.li-item {
-    width: 96px;
-    height: 72px;
-    background: var(--bg-topbar);
-    color: var(--text-head);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.first-item {
-    border-bottom-left-radius: 40%;
-}
-
-.start-app {
-    background: var(--app);
-}
-
-/* Theme Changer */
-
-.icon {
-    font-size: 50px;
-}
-
-/* Logo */
-
-.logo-container {
-    height: 100px;
-    overflow: hidden;
-}
-
-.logo {
-    width: 500px;
-    fill: var(--text-body);
-}
-
 /* App */
 
 .app-container {
@@ -484,42 +417,7 @@ body {
         margin: 16px 8px 0 16px;
     }
 
-    .top-bar {
-        width: 40%;
-        margin-right: 5px;
-    }
-
-    .icon {
-        font-size: 35px;
-    }
-
     .card-name {
         max-width: 180px;
-    }
-
-    .form-container {
-
-    }
-
-    .header-background,
-    .logo-container {
-        height: 50px;
-    }
-
-    .logo {
-        width: 250px;
-    }
-
-    .panel-heading {
-        margin-bottom: 16px;
-    }
-
-    .panel-text {
-        margin-bottom: 10px;
-    }
-
-    .li-item {
-        width: 64px;
-        height: 56px;
     }
 }
