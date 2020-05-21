@@ -13,6 +13,9 @@
 	height: 100%;
     overflow: hidden;
 }
+.header__logo-container svg {
+	width: 450px;
+}
 
 .header__logo {
 	width: 500px;
@@ -23,6 +26,7 @@
 	display: grid;
 	justify-content: end;
 	height: 100%;
+	margin-right: 20px;
 }
 
 .header__nav-bar {
@@ -62,8 +66,16 @@
 
 @media(max-width: 767px) {
 	.header {
-		grid-template-columns: 210px 1fr;
+		grid-template-columns: 190px 1fr;
         height: 50px;
+	}
+
+	.header__logo-container svg {
+		width: 230px;
+	}
+
+	.header__nav-container {
+		margin-right: 10px;
 	}
 	
 	.header__nav-bar {

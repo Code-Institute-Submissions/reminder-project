@@ -3,7 +3,12 @@ import PropTypes from "prop-types";
 import Card from "./Card";
 import { ReminderContext } from "./RemindApp";
 import { ListType } from "../../utils/Constants";
-import { Down, Up, Complete, Close, Reminder } from "../svg";
+import { MdAssignment } from "react-icons/md";
+import {
+	IoIosArrowDropup,
+	IoIosArrowDropdown,
+	IoIosCloseCircleOutline,
+} from "react-icons/io";
 
 import {
 	loadFromLocalStorage,
@@ -41,19 +46,15 @@ function List(props) {
 	const showMore = () => {
 		if (isShown) {
 			return (
-				<Up
-					holderClass="section__toggle"
-					iconClass="section__btn"
-					alt="show"
-				/>
+				<div className="section__toggle">
+					<IoIosArrowDropup className="section__btn" alt="show" />
+				</div>
 			);
 		}
 		return (
-			<Down
-				holderClass="section__toggle"
-				iconClass="section__btn"
-				alt="hide"
-			/>
+			<div className="section__toggle">
+				<IoIosArrowDropdown className="section__btn" alt="hide" />
+			</div>
 		);
 	};
 
@@ -89,22 +90,21 @@ function List(props) {
 	return (
 		<section className={`list list__${props.listType}`}>
 			<div className="section__heading">
-				<Reminder
-					holderClass="section__icon-container"
-					iconClass="section__icon"
-					alt="Remainders"
-				/>
+				<div className="section__icon-container">
+					<MdAssignment className="section__icon" alt="Remainders" />
+				</div>
 				<h2 className="section__title list__title">
 					<span>{name}</span>
 					<div
 						className="list__delete"
 						onClick={() => deleteList(props.listType)}
 					>
-						<Close
-							holderClass="list__icon-container"
-							iconClass="list__icon"
-							alt="Delete list items"
-						/>
+						<div className="list__icon-container">
+							<IoIosCloseCircleOutline
+								className="list__icon"
+								alt="Delete list items"
+							/>
+						</div>
 					</div>
 				</h2>
 				<div onClick={() => handleShown(!isShown)}>{showMore()}</div>
@@ -118,9 +118,7 @@ function List(props) {
 					</div>
 				)}
 				{props.list.length < 1 && (
-					<div className="list__no-data">
-						The list is empty!
-					</div>
+					<div className="list__no-data">The list is empty!</div>
 				)}
 			</div>
 		</section>

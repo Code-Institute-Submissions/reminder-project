@@ -1,12 +1,14 @@
 import React from "react";
-import "./HowToUse.css";
 import { FaRegBell } from "react-icons/fa";
-import { Down, Up, InfoCircle } from "./svg";
+import { MdInfoOutline } from 'react-icons/md';
+import { IoIosArrowDropup, IoIosArrowDropdown } from 'react-icons/io';
 
 import {
 	loadFromLocalStorage,
 	saveToLocalStorage,
 } from "../utils/HandleLocalStorage";
+
+import "./HowToUse.css";
 
 const HowToUse = () => {
 	const [isShown, setIsShown] = React.useState(
@@ -21,30 +23,24 @@ const HowToUse = () => {
 	const showMore = () => {
 		if (isShown) {
 			return (
-				<Up
-					holderClass="section__toggle"
-					iconClass="section__btn"
-					alt='show'
-				/>
+				<div className="section__toggle">
+					<IoIosArrowDropup className="section__btn" alt='show' />
+				</div>
 			);
 		}
 		return (
-			<Down
-				holderClass="section__toggle"
-				iconClass="section__btn"
-				alt='hide'
-			/>
+			<div className="section__toggle">
+				<IoIosArrowDropdown className="section__btn" alt='hide' />
+			</div>
 		);
 	};
 
 	return (
 		<section className="htu">
 			<div className="section__heading">
-				<InfoCircle
-					holderClass="section__icon-container"
-					iconClass="section__icon"
-					alt="How to use"
-				/>
+				<div className="section__icon-container">
+					<MdInfoOutline className="section__icon" alt="How to use" />
+				</div>
 				<h2 className="section__title">How To Use</h2>
 				<div onClick={() => handleShown(!isShown)}>{showMore()}</div>
 			</div>
