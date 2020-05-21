@@ -1,7 +1,53 @@
+:root {
+	--gray0: #f8f8f8;
+	--gray1: #dbe1e8;
+	--gray2: #b2becd;
+	--gray3: #6c7983;
+	--gray4: #454e56;
+	--gray5: #2a2e35;
+	--gray6: #12181b;
+	--bg-header-light: #f0f0f0;
+	--text-hover-light: var(--gray6);
+	--text-hover-dark: var(--gray6);
+	--bg-hover-light: #f0f0f0;
+	--bg-hover-dark: var(--gray1);
+}
+
+.light {
+	--text-date-picker: var(--gray6);
+	--bg-date-picker-header: var(--bg-header-light);
+	--bg-date-picker-body: var(--gray0);
+	--text-hover: var(--text-hover-light);
+	--bg-hover: var(--bg-hover-light);
+}
+
+.dark {
+	--text-date-picker: var(--gray0);
+	--bg-date-picker-header: var(--gray6);
+	--bg-date-picker-body: var(--gray5);
+	--text-hover: var(--text-hover-dark);
+	--bg-hover: var(--bg-hover-dark);
+}
+
 .react-datepicker, 
 .react-datepicker__time-list {
 	color: var(--text-date-picker);
 	background: var(--bg-date-picker-body);
+}
+
+.react-datepicker__input-container input {
+	display: block;
+    margin: 0;
+    width: 100%;
+	border: 0;
+	border-bottom: 1px solid var(--text-body);
+	color: var(--text-body);
+	height: 1.1876em;
+    padding: 6px 3px 7px;
+    min-width: 0;
+    background: none;
+    box-sizing: content-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .react-datepicker__month, 
@@ -21,7 +67,7 @@
 }
 
 .react-datepicker-popper {
-	width: 350px;
+	max-width: 350px;
 }
 
 .react-datepicker__header {
@@ -35,48 +81,4 @@
 .react-datepicker__time-list-item:hover {
 	color: var(--text-hover);
 	background: var(--bg-hover);
-}
-
-.light {
-	--text-date-picker: var(--gray6);
-	--bg-date-picker-header: var(--bg-header-light);
-	--bg-date-picker-body: var(--gray0);
-	--text-hover: var(--text-hover-light);
-	--bg-hover: var(--bg-hover-light);
-}
-
-.dark {
-	--text-date-picker: var(--gray0);
-	--bg-date-picker-header: var(--gray6);
-	--bg-date-picker-body: var(--gray5);
-	--text-hover: var(--text-hover-dark);
-	--bg-hover: var(--bg-hover-dark);
-}
-
-:root {
-	--gray0: #f8f8f8;
-	--gray1: #dbe1e8;
-	--gray2: #b2becd;
-	--gray3: #6c7983;
-	--gray4: #454e56;
-	--gray5: #2a2e35;
-	--gray6: #12181b;
-	--bg-header-light: #f0f0f0;
-	--text-hover-light: var(--gray6);
-	--text-hover-dark: var(--gray6);
-	--bg-hover-light: #f0f0f0;
-	--bg-hover-dark: var(--gray1);
-}
-
-/* Media Queries */
-
-@media(max-width: 767px) {
-	.react-datepicker-popper {
-		width: 350px;
-		left: -90px !important;
-	}
-
-	.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle {
-		left: 140px;
-	}
 }

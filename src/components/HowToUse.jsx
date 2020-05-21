@@ -10,12 +10,12 @@ import {
 
 const HowToUse = () => {
 	const [isShown, setIsShown] = React.useState(
-		() => loadFromLocalStorage("isShown") ?? false
+		() => loadFromLocalStorage("howToUse") ?? false
 	);
 
 	function handleShown(show) {
 		setIsShown(show);
-		saveToLocalStorage("isShown", show);
+		saveToLocalStorage("howToUse", show);
 	}
 
 	const showMore = () => {
