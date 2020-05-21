@@ -94,8 +94,8 @@ function RemindApp(props) {
 		<>
 			<ReminderContext.Provider value={contextValues}>
 				<Form addReminder={addReminder} handleForm={props.handleForm} />
-				<List key='expired' listType={ListType.expired} list={reminders.list.filter((x) => (x.done === false && x.expired === true))} />
 				<List key='running' listType={ListType.running} list={reminders.list.filter((x) => (x.done === false && x.expired === false))} />
+				<List key='expired' listType={ListType.expired} list={reminders.list.filter((x) => (x.done === false && x.expired === true))} />
 				<List key='done' listType={ListType.done} list={reminders.list.filter((x) => (x.done === true))} />
 			</ReminderContext.Provider>
 			<Notification 

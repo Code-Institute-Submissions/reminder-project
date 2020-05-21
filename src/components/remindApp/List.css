@@ -1,0 +1,68 @@
+.list {
+	display: block;
+	margin: 15px 30px;
+	background: var(--bg-list);
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.list__container {
+	padding: 20px 10px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+}
+
+.list__title {
+	display: grid;
+	grid-template-columns: 120px auto;
+	justify-items: left;
+	align-items: center;
+}
+
+.list__delete {
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.list__icon { 
+	font-size: 30px;
+    line-height: 1;
+}
+
+.list__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.list__no-data {
+	font-weight: 700;
+}
+
+.list__expired .section__icon {
+    color: var( --icon-expired);
+}
+
+.list__expired .card__container {
+    background: var(--bg-expired);
+}
+
+.list__done .section__icon {
+    color: var( --icon-done);
+}
+
+.list__done .card__container {
+    background: var(--bg-done);
+}
+
+@media(max-width: 767px) {
+	.list {
+		margin: 0 0 15px;
+		border-radius: 0;
+		padding: 10px;
+	}
+}

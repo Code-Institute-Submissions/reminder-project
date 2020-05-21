@@ -1,9 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Countdown from './Countdown';
-import { ReminderContext } from './RemindApp';
-import { FaCheckSquare, FaWindowClose } from 'react-icons/fa';
-import { useOnClickOutside } from '../../utils/ClickOutside';
+import React from "react";
+import PropTypes from "prop-types";
+import Countdown from "./Countdown";
+import { ReminderContext } from "./RemindApp";
+import { useOnClickOutside } from "../../utils/ClickOutside";
+import { Complete, Close } from "../svg";
+
+import "./Card.css";
 
 const Card = (props) => {
 	const { reminders, setReminders } = React.useContext(ReminderContext);
@@ -20,7 +22,7 @@ const Card = (props) => {
 	function cardDelete() {
 		const index = newList.findIndex((x) => x.id === props.id);
 		newList.splice(index, 1);
-		setReminders({update: !reminders.update, list: newList});
+		setReminders({ update: !reminders.update, list: newList });
 	}
 
 	function cardComplete() {
@@ -31,37 +33,98 @@ const Card = (props) => {
 		newList.sort(function (a, b) {
 			return a.expires - b.expires;
 		});
-		setReminders({update: !reminders.update, list: newList});
+		setReminders({ update: !reminders.update, list: newList });
 	}
 
 	return (
 		<>
-			<div className='card-container'>
-				<p className='name-heading card-heading'>Name:</p>
-				<p className='card-name card-content' onClick={() => setShowName(true)}>{item.name}</p>
+			<div className="card__container">
+				<p className="card__heading">Name:</p>
+				<p
+					className="card__name card__content"
+					onClick={() => setShowName(true)}
+				>
+					{item.name}
+				</p>
 				<div></div>
-				<p className='date-heading card-heading'>Created on:</p>
-				<p className='card-date card-content'>{created.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}</p>
+				<p className="card__heading">Created on:</p>
+				<p className="card__date card__content">
+					{created.toLocaleString([], {
+						year: "numeric",
+						month: "numeric",
+						day: "numeric",
+						hour: "2-digit",
+						minute: "2-digit",
+					})}
+				</p>
 				<div></div>
-				{!item.done && !item.expired && <p className='countdown-heading card-heading'>Expires in: </p>}
-				{item.done && <p className='countdown-heading card-heading'>Done: </p>}
-				{!item.done && item.expired && <p className='countdown-heading card-heading'>Expired on: </p>}
-				<div className='countdown card-content'>
-					{!item.done && !item.expired && <Countdown totalSeconds={Math.floor((item.expires - Date.now()) / 1000)} id={item.id} />}
-					{!item.done && item.expired && expires.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}
-					{item.done && expires.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}
+				{!item.done && !item.expired && (
+					<p className="card__heading">Expires in: </p>
+				)}
+				{item.done && <p className="card__heading">Done: </p>}
+				{!item.done && item.expired && (
+					<p className="card__heading">Expired on: </p>
+				)}
+				<div className="card__content">
+					{!item.done && !item.expired && (
+						<Countdown
+							totalSeconds={Math.floor(
+								(item.expires - Date.now()) / 1000
+							)}
+							id={item.id}
+						/>
+					)}
+					{!item.done &&
+						item.expired &&
+						expires.toLocaleString([], {
+							year: "numeric",
+							month: "numeric",
+							day: "numeric",
+							hour: "2-digit",
+							minute: "2-digit",
+						})}
+					{item.done &&
+						expires.toLocaleString([], {
+							year: "numeric",
+							month: "numeric",
+							day: "numeric",
+							hour: "2-digit",
+							minute: "2-digit",
+						})}
 				</div>
 				<div></div>
-				{!item.done && <FaCheckSquare className='card-complete-btn' onClick={() => cardComplete()} />}
-				<FaWindowClose className='card-delete-btn' onClick={() => cardDelete()} />
-				<div ref={cardRef} className={showName ? 'show-full-name' : 'hidden'}>{item.name}</div>
+				{!item.done && (
+					<div
+						className="card__complete-btn"
+						onClick={() => cardComplete()}
+					>
+						<Complete
+							holderClass="card__icon-container"
+							iconClass="card__icon"
+							alt="Complete"
+						/>
+					</div>
+				)}
+				<div className="card__delete-btn" onClick={() => cardDelete()}>
+					<Close
+						holderClass="card__icon-container"
+						iconClass="card__icon"
+						alt="Delete"
+					/>
+				</div>
+				<div
+					ref={cardRef}
+					className={showName ? "card__full-name" : "hidden"}
+				>
+					{item.name}
+				</div>
 			</div>
 		</>
 	);
-}
+};
 
 Card.propTypes = {
-	id: PropTypes.string.isRequired
+	id: PropTypes.string.isRequired,
 };
 
 export default Card;
