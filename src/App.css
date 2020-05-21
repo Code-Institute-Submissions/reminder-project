@@ -23,73 +23,6 @@ body {
     height: 100%;
 }
 
-/* Header */
-
-.header-background {
-    height: 100px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background: var(--bg-header-footer);
-}
-
-/* Top-bar */
-
-.top-bar-container {
-    height: 70px;
-    width: 100%;
-}
-
-.top-bar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 8px 24px;
-    list-style-type: none;
-    transition: top .3s ease;
-    z-index: 999;
-}
-
-.li-item {
-    width: 96px;
-    height: 72px;
-    background: var(--bg-topbar);
-    color: var(--text-head);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.first-item {
-    border-bottom-left-radius: 40%;
-}
-
-.start-app {
-    background: var(--app);
-}
-
-/* Theme Changer */
-
-.icon {
-    font-size: 50px;
-}
-
-/* Logo */
-
-.logo-container {
-    height: 100px;
-    overflow: hidden;
-}
-
-.logo {
-    width: 500px;
-    fill: var(--text-body);
-}
-
 /* App */
 
 .app-container {
@@ -98,6 +31,49 @@ body {
     color: var(--text-body);
     background: var(--bg-body);
 }
+
+/* section global styles */
+.section__heading {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    column-gap: 10px;
+}
+
+.section__icon-container {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.section__icon {
+    font-size: 40px;
+    line-height: 1;
+    color: var(--text-body);
+}
+
+.section__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-body);
+}
+
+.section__toggle {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.section__btn {
+    font-size: 40px;
+    line-height: 1;
+    color: var(--text-body);
+}
+
+.section__btn:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
 
 /* Form */
 
@@ -302,54 +278,6 @@ body {
     margin: 0 2px;
 }
 
-/* How To Use */
-
-.container {
-    margin: 0 32px;
-    align-items: center;
-    display: grid;
-    grid-template-columns: auto;
-}
-
-.heading {
-    font-weight: 700;
-    text-align: center;
-    padding-top: 32px;
-    margin-bottom: 48px;
-}
-
-.text-style {
-    margin-bottom: 16px;
-}
-
-.clock-icon {
-    width: 500px;
-    height: 500px;
-    color: var(--text-body);
-}
-
-.heading-container {
-    display: grid;
-    align-items: center;
-    grid-column-gap: 10px;
-    column-gap: 10px;
-    font-weight: 700;
-}
-
-.list-toggle-htu {
-    display: block;
-    grid-template-columns: 120px auto 60px;
-    position: relative;
-    width: 60px;
-    height: 30px;
-}
-
-.htu-btn {
-    position: absolute;
-    font-size: 60px;
-    cursor: pointer;
-}
-
 /* Footer */
 
 .footer-container {
@@ -484,42 +412,7 @@ body {
         margin: 16px 8px 0 16px;
     }
 
-    .top-bar {
-        width: 40%;
-        margin-right: 5px;
-    }
-
-    .icon {
-        font-size: 35px;
-    }
-
     .card-name {
         max-width: 180px;
-    }
-
-    .form-container {
-
-    }
-
-    .header-background,
-    .logo-container {
-        height: 50px;
-    }
-
-    .logo {
-        width: 250px;
-    }
-
-    .panel-heading {
-        margin-bottom: 16px;
-    }
-
-    .panel-text {
-        margin-bottom: 10px;
-    }
-
-    .li-item {
-        width: 64px;
-        height: 56px;
     }
 }

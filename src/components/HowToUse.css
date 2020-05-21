@@ -1,0 +1,44 @@
+.htu {
+	display: block;
+	margin: 15px 30px;
+	background: var(--bg-list);
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.htu__container {
+	padding: 20px 10px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+}
+
+.htu__background {
+	grid-row: 1 / 2;
+	grid-column: 1 / 2;
+	justify-self: end;
+	align-self: center;
+	opacity: .15;
+	font-size: 350px;
+}
+
+.htu__content {
+	grid-row: 1 / 2;
+	grid-column: 1 / 2;
+}
+
+.htu__content * {
+	margin: 0 0 10px 0;
+}
+
+@media(max-width: 767px) {
+	.htu {
+		margin: 0 0 15px;
+		border-radius: 0;
+		padding: 10px;
+	}
+
+	.htu__background {
+		display: none;
+	}
+}
