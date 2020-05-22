@@ -52,12 +52,13 @@ const HowToUse = () => {
 						when a reminder you have set expires.
 					</p>
 					<p>
-						In order to create a reminder you've got to click the
-						green button in the upper right corner of the screen.
-						Doing so will open a form popout. After that just give
-						the reminder an appropriate name corresponding to the
-						task you want to be reminded of, and set at which date
-						and time you want the reminder to go off at.
+						In order to create a reminder you first have to navigate 
+						to the "Add Reminder" section by either scrolling down or 
+						clicking the alarm icon in the header.
+					</p>
+					<p>
+						After that, you will see the add form in which you will 
+						need to set both a reminder name and an expiration date.
 					</p>
 					<p>
 						The time table is divided into fifteen minute intervals,
@@ -75,8 +76,14 @@ const HowToUse = () => {
 						Regardless if the reminder has expired or not, you are
 						able to remove any reminder you no longer want or have a
 						need for by clicking the remove button which can be
-						found on every individual reminder. The same goes for
-						entire lists.
+						found on every individual reminder. The same goes if you 
+						wish to remove all reminders from any of the lists.
+					</p>
+					<p>
+						Clicking on the delete entire list button will prompt an 
+						"Are you sure?" popout asking you to confirm. This is 
+						noteworthy as the same confirmation popout will not open 
+						on deleting individual reminders.
 					</p>
 					<p>
 						I recommend removing all the expired and non-needed
