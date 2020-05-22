@@ -9,7 +9,7 @@ This project is designed as an alert system website that notifies the user when 
 1. [**Project**](#project)
 2. [**UX**](#UX)
     - [**User Stories**](#user-stories)
-	- [**Mockup**] (#mockup)
+	- [**Mockup**](#mockup)
 3. [**Features**](#features)
 4. [**Technologies**](#technologies)
 5. [**Testing**](#testing)

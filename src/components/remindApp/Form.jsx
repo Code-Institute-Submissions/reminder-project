@@ -14,7 +14,7 @@ import './Datepicker.css';
 
 function Form(props) {
 	const [isShown, setIsShown] = React.useState(
-		() => loadFromLocalStorage('addForm') ?? false
+		() => loadFromLocalStorage('addForm') ?? true
 	);
 	const [reminderName, setReminderName] = React.useState('');
 	const [reminderTime, setReminderTime] = React.useState(new Date());
