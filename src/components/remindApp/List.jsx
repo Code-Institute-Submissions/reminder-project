@@ -34,7 +34,7 @@ function List(props) {
 	}
 
 	const [isShown, setIsShown] = React.useState(
-		() => loadFromLocalStorage(`list-${name}`) ?? false
+		() => loadFromLocalStorage(`list-${name}`) ?? true
 	);
 
 	function handleShown(show) {

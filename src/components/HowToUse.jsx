@@ -12,7 +12,7 @@ import './HowToUse.css';
 
 const HowToUse = () => {
 	const [isShown, setIsShown] = React.useState(
-		() => loadFromLocalStorage('howToUse') ?? false
+		() => loadFromLocalStorage('howToUse') ?? true
 	);
 
 	function handleShown(show) {
