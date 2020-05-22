@@ -70,3 +70,51 @@
 		padding: 20px 5px;
 	}
 }
+
+.ays {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background: rgba(51, 51, 51, .3);
+	z-index: 100;
+}
+
+.ays__container {
+	position: absolute;
+	top: 50px;
+	left: calc((100vw - 300px) / 2);
+	box-sizing: border-box;
+	width: 300px;
+	padding: 15px;
+	background: rgba(200, 200, 200, .7);
+	border: 1px solid #fff;
+	border-radius: 10px;
+}
+
+.ays__btn-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: end;
+	margin-top: 10px;
+}
+
+.ays__btn {
+	display: block;
+    border-radius: 5px;
+    border: 0;
+    height: 36px;
+    padding: 0 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-body);
+    background: var(--bg-body);
+    cursor: pointer;
+}
+
+.ays__btn-yes {
+	justify-self: start;
+	background: green;
+}
