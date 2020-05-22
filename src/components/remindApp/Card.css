@@ -6,7 +6,7 @@
     display: grid;
     width: 100%;
     height: 120px;
-    color: var(--text-body);
+    color: var(--text-body-invert);
     background: var(--bg-card);
     grid-template-columns: max-content 1fr 40px;
     grid-template-rows: 1fr 1fr 1fr;
@@ -24,6 +24,9 @@
     color: var(--del-btn);
     cursor: pointer;
 }
+.card__delete-btn:hover {
+    color: var(--del-btn-hover);
+}
 
 .card__complete-btn {
     position: absolute;
@@ -35,15 +38,15 @@
     color: var(--com-btn);
     cursor: pointer;
 }
+.card__complete-btn:hover {
+    color: var(--com-btn-hover);
+}
 
 .card__icon-container {
 	width: 30px;
     height: 30px;
     border-radius: 15px;
     background: #fff;
-}
-.card__icon-container:hover {
-	opacity: .5;
 }
 
 .card__icon {
@@ -73,7 +76,6 @@
     left: 5px;
     box-sizing: border-box;
     width: calc(100% - 45px);
-    /* width: auto; */
     height: fit-content;
     padding: 3px 5px;
     word-wrap: break-word;

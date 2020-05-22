@@ -1,39 +1,36 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Card from "./Card";
-import { ReminderContext } from "./RemindApp";
-import { ListType } from "../../utils/Constants";
-import { MdAssignment } from "react-icons/md";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Card from './Card';
+import { ReminderContext } from './RemindApp';
+import { ListType } from '../../utils/Constants';
+import { MdAssignment } from 'react-icons/md';
 import {
 	IoIosArrowDropup,
 	IoIosArrowDropdown,
 	IoIosCloseCircleOutline,
-} from "react-icons/io";
+} from 'react-icons/io';
 
 import {
 	loadFromLocalStorage,
 	saveToLocalStorage,
-} from "../../utils/HandleLocalStorage";
+} from '../../utils/HandleLocalStorage';
 
-import "./List.css";
+import './List.css';
 
 function List(props) {
 	const { reminders, setReminders } = React.useContext(ReminderContext);
 
 	const [aysIsHidden, setAysIsHidden] = React.useState(true);
 
-	/**
-	 *  TBW
-	 */
-	let name = "";
+	let name = '';
 	if (props.listType === ListType.expired) {
-		name = "Expired";
+		name = 'Expired';
 	}
 	if (props.listType === ListType.running) {
-		name = "Running";
+		name = 'Running';
 	}
 	if (props.listType === ListType.done) {
-		name = "Done";
+		name = 'Done';
 	}
 
 	const [isShown, setIsShown] = React.useState(
@@ -48,14 +45,14 @@ function List(props) {
 	const showMore = () => {
 		if (isShown) {
 			return (
-				<div className="section__toggle">
-					<IoIosArrowDropup className="section__btn" alt="show" />
+				<div className='section__toggle'>
+					<IoIosArrowDropup className='section__btn' alt='show' />
 				</div>
 			);
 		}
 		return (
-			<div className="section__toggle">
-				<IoIosArrowDropdown className="section__btn" alt="hide" />
+			<div className='section__toggle'>
+				<IoIosArrowDropdown className='section__btn' alt='hide' />
 			</div>
 		);
 	};
@@ -95,20 +92,20 @@ function List(props) {
 	}
 
 	return (
-		<section className={`list list__${props.listType}`} id="list__id">
-			<div className={aysIsHidden ? "hidden" : "ays"}>
-				<div className="ays__container">
+		<section className={`list list__${props.listType}`} id='list__id'>
+			<div className={aysIsHidden ? 'hidden' : 'ays'}>
+				<div className='ays__container'>
 					<h2>Are You Sure?</h2>
 					<p>This action cannot be undone!</p>
-					<div className="ays__btn-container">
+					<div className='ays__btn-container'>
 						<button
-							className="ays__btn ays__btn-yes"
+							className='ays__btn ays__btn-yes'
 							onClick={() => areYouSure(props.listType)}
 						>
 							Yes
 						</button>
 						<button
-							className="ays__btn"
+							className='ays__btn'
 							onClick={() => setAysIsHidden(true)}
 						>
 							No
@@ -116,21 +113,21 @@ function List(props) {
 					</div>
 				</div>
 			</div>
-			<div className="section__heading">
-				<div className="section__icon-container">
-					<MdAssignment className="section__icon" alt="Remainders" />
+			<div className='section__heading'>
+				<div className='section__icon-container'>
+					<MdAssignment className='section__icon' alt='Remainders' />
 				</div>
-				<h2 className="section__title list__title">
+				<h2 className='section__title list__title'>
 					<span>{name}</span>
 					{props.list.length > 0 && (
 						<div
-							className="list__delete"
+							className='list__delete'
 							onClick={() => setAysIsHidden(false)}
 						>
-							<div className="list__icon-container">
+							<div className='list__icon-container'>
 								<IoIosCloseCircleOutline
-									className="list__icon"
-									alt="Delete list items"
+									className='list__icon'
+									alt='Delete list items'
 								/>
 							</div>
 						</div>
@@ -138,16 +135,16 @@ function List(props) {
 				</h2>
 				<div onClick={() => handleShown(!isShown)}>{showMore()}</div>
 			</div>
-			<div className={isShown ? "list__container" : "hidden"}>
+			<div className={isShown ? 'list__container' : 'hidden'}>
 				{props.list.length > 0 && (
-					<div className="list__cards">
+					<div className='list__cards'>
 						{props.list.map((item) => (
 							<Card key={item.id} id={item.id} />
 						))}
 					</div>
 				)}
 				{props.list.length < 1 && (
-					<div className="list__no-data">The list is empty!</div>
+					<div className='list__no-data'>The list is empty!</div>
 				)}
 			</div>
 		</section>

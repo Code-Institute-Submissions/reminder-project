@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Countdown from "./Countdown";
-import { ReminderContext } from "./RemindApp";
-import { useOnClickOutside } from "../../utils/ClickOutside";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Countdown from './Countdown';
+import { ReminderContext } from './RemindApp';
+import { useOnClickOutside } from '../../utils/ClickOutside';
 import {
 	IoIosCloseCircleOutline,
 	IoIosCheckmarkCircleOutline,
-} from "react-icons/io";
+} from 'react-icons/io';
 
-import "./Card.css";
+import './Card.css';
 
 const Card = (props) => {
 	const { reminders, setReminders } = React.useContext(ReminderContext);
@@ -41,34 +41,34 @@ const Card = (props) => {
 
 	return (
 		<>
-			<div className="card__container">
-				<p className="card__heading">Name:</p>
+			<div className='card__container'>
+				<p className='card__heading'>Name:</p>
 				<p
-					className="card__name card__content"
+					className='card__name card__content'
 					onClick={() => setShowName(true)}
 				>
 					{item.name}
 				</p>
 				<div></div>
-				<p className="card__heading">Created on:</p>
-				<p className="card__date card__content">
+				<p className='card__heading'>Created on:</p>
+				<p className='card__date card__content'>
 					{created.toLocaleString([], {
-						year: "numeric",
-						month: "numeric",
-						day: "numeric",
-						hour: "2-digit",
-						minute: "2-digit",
+						year: 'numeric',
+						month: 'numeric',
+						day: 'numeric',
+						hour: '2-digit',
+						minute: '2-digit',
 					})}
 				</p>
 				<div></div>
 				{!item.done && !item.expired && (
-					<p className="card__heading">Expires in: </p>
+					<p className='card__heading'>Expires in: </p>
 				)}
-				{item.done && <p className="card__heading">Done: </p>}
+				{item.done && <p className='card__heading'>Done: </p>}
 				{!item.done && item.expired && (
-					<p className="card__heading">Expired on: </p>
+					<p className='card__heading'>Expired on: </p>
 				)}
-				<div className="card__content">
+				<div className='card__content'>
 					{!item.done && !item.expired && (
 						<Countdown
 							totalSeconds={Math.floor(
@@ -80,46 +80,46 @@ const Card = (props) => {
 					{!item.done &&
 						item.expired &&
 						expires.toLocaleString([], {
-							year: "numeric",
-							month: "numeric",
-							day: "numeric",
-							hour: "2-digit",
-							minute: "2-digit",
+							year: 'numeric',
+							month: 'numeric',
+							day: 'numeric',
+							hour: '2-digit',
+							minute: '2-digit',
 						})}
 					{item.done &&
 						expires.toLocaleString([], {
-							year: "numeric",
-							month: "numeric",
-							day: "numeric",
-							hour: "2-digit",
-							minute: "2-digit",
+							year: 'numeric',
+							month: 'numeric',
+							day: 'numeric',
+							hour: '2-digit',
+							minute: '2-digit',
 						})}
 				</div>
 				<div></div>
 				{!item.done && (
 					<div
-						className="card__complete-btn"
+						className='card__complete-btn'
 						onClick={() => cardComplete()}
 					>
-						<div className="card__icon-container">
+						<div className='card__icon-container'>
 							<IoIosCheckmarkCircleOutline
-								className="card__icon"
-								alt="Complete"
+								className='card__icon'
+								alt='Complete'
 							/>
 						</div>
 					</div>
 				)}
-				<div className="card__delete-btn" onClick={() => cardDelete()}>
-					<div className="card__icon-container">
+				<div className='card__delete-btn' onClick={() => cardDelete()}>
+					<div className='card__icon-container'>
 						<IoIosCloseCircleOutline
-							className="card__icon"
-							alt="Delete"
+							className='card__icon'
+							alt='Delete'
 						/>
 					</div>
 				</div>
 				<div
 					ref={cardRef}
-					className={showName ? "card__full-name" : "hidden"}
+					className={showName ? 'card__full-name' : 'hidden'}
 				>
 					{item.name}
 				</div>

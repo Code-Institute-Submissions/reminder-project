@@ -19,7 +19,7 @@
 
 .header__logo {
 	width: 500px;
-    fill: var(--text-body);
+    fill: var(--text-head);
 }
 
 .header__nav-container {

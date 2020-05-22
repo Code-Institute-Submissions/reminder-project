@@ -1,59 +1,59 @@
-import React from "react";
-import { FaRegBell } from "react-icons/fa";
+import React from 'react';
+import { FaRegBell } from 'react-icons/fa';
 import { MdInfoOutline } from 'react-icons/md';
 import { IoIosArrowDropup, IoIosArrowDropdown } from 'react-icons/io';
 
 import {
 	loadFromLocalStorage,
 	saveToLocalStorage,
-} from "../utils/HandleLocalStorage";
+} from '../utils/HandleLocalStorage';
 
-import "./HowToUse.css";
+import './HowToUse.css';
 
 const HowToUse = () => {
 	const [isShown, setIsShown] = React.useState(
-		() => loadFromLocalStorage("howToUse") ?? false
+		() => loadFromLocalStorage('howToUse') ?? false
 	);
 
 	function handleShown(show) {
 		setIsShown(show);
-		saveToLocalStorage("howToUse", show);
+		saveToLocalStorage('howToUse', show);
 	}
 
 	const showMore = () => {
 		if (isShown) {
 			return (
-				<div className="section__toggle">
-					<IoIosArrowDropup className="section__btn" alt='show' />
+				<div className='section__toggle'>
+					<IoIosArrowDropup className='section__btn' alt='show' />
 				</div>
 			);
 		}
 		return (
-			<div className="section__toggle">
-				<IoIosArrowDropdown className="section__btn" alt='hide' />
+			<div className='section__toggle'>
+				<IoIosArrowDropdown className='section__btn' alt='hide' />
 			</div>
 		);
 	};
 
 	return (
-		<section className="htu" id='htu__id'>
-			<div className="section__heading">
-				<div className="section__icon-container">
-					<MdInfoOutline className="section__icon" alt="How to use" />
+		<section className='htu' id='htu__id'>
+			<div className='section__heading'>
+				<div className='section__icon-container'>
+					<MdInfoOutline className='section__icon' alt='How to use' />
 				</div>
-				<h2 className="section__title">How To Use</h2>
+				<h2 className='section__title'>How To Use</h2>
 				<div onClick={() => handleShown(!isShown)}>{showMore()}</div>
 			</div>
-			<div className={isShown ? "htu__container" : "hidden"}>
-				<FaRegBell className="htu__background" />
-				<div className="htu__content">
+			<div className={isShown ? 'htu__container' : 'hidden'}>
+				<FaRegBell className='htu__background' />
+				<div className='htu__content'>
 					<p>
 						Task Meister is an alert website which will notify you
 						when a reminder you have set expires.
 					</p>
 					<p>
 						In order to create a reminder you first have to navigate 
-						to the "Add Reminder" section by either scrolling down or 
+						to the 'Add Reminder' section by either scrolling down or 
 						clicking the alarm icon in the header.
 					</p>
 					<p>

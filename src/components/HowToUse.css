@@ -1,7 +1,7 @@
 .htu {
 	display: block;
 	margin: 15px 30px;
-	background: var(--bg-list);
+	background: var(--bg-howto);
 	border-radius: 10px;
 	padding: 10px;
 }

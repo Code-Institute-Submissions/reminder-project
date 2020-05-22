@@ -90,8 +90,9 @@
 	width: 300px;
 	padding: 15px;
 	background: rgba(200, 200, 200, .7);
-	border: 1px solid #fff;
+	border: 1px solid var(--text-body-invert);
 	border-radius: 10px;
+	color: var(--text-body);
 }
 
 .ays__btn-container {
@@ -109,12 +110,12 @@
     padding: 0 30px;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--text-body);
-    background: var(--bg-body);
+    color: var(--text-body-invert);
+    background: var(--bg-expired);
     cursor: pointer;
 }
 
 .ays__btn-yes {
 	justify-self: start;
-	background: green;
+	background: var(--bg-done);
 }

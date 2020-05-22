@@ -48,13 +48,13 @@
     padding: 0 30px;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--text-body);
-    background: var(--bg-body);
+    color: var(--text-body-invert);
+    background: var(--form-btn);
     cursor: pointer;
 }
 
 .form__btn:hover {
-    background: var(--bg-hover-form-btn);
+    color: var(--text-body);
 }
 
 .form__error {
