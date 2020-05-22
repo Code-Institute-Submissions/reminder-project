@@ -8,14 +8,6 @@ import RemindApp from './remindApp/RemindApp';
 
 const StartPage = () => {
 	const [isDark, setIsDark] = React.useState(() => (loadFromLocalStorage('isDark') ?? false));
-	const [isHidden, setIsHidden] = React.useState(() => (loadFromLocalStorage('isHidden') ?? false));
-	const [formActive, setFormActive] = React.useState(false);
-
-	function handleVisibility(visible) {
-		setIsHidden(visible);
-		saveToLocalStorage('isHidden', visible);
-		window.scrollTo(0, 0);
-	}
 
 	function handleTheme(theme) {
 		setIsDark(theme);
@@ -24,9 +16,9 @@ const StartPage = () => {
 
 	return (
 		<div className={isDark ? 'dark app-container' : 'light app-container'}>
-			<Header isDark={isDark} handleTheme={handleTheme} isHidden={isHidden} handleVisibility={handleVisibility} handleForm={setFormActive} />
-			{isHidden && <HowToUse />}
-			<RemindApp formActive={formActive} handleForm={setFormActive} />
+			<Header isDark={isDark} handleTheme={handleTheme} />
+			<HowToUse />
+			<RemindApp />
 			<Footer />
 		</div>
 	);
