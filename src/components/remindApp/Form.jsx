@@ -63,7 +63,7 @@ function Form(props) {
 	}
 
 	return (
-		<section className="form">
+		<section className="form" id='form__id'>
 			<div className="section__heading">
 				<div className="section__icon-container">
 					<MdAddAlarm className="section__icon" alt="Add new reminder" />
@@ -115,7 +115,7 @@ function Form(props) {
 
 Form.propTypes = {
 	addReminder: PropTypes.func.isRequired,
-	handleForm: PropTypes.func.isRequired,
+	handleForm: PropTypes.func.isRequired
 };
 
 export default Form;
