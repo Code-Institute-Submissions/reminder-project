@@ -1,0 +1,121 @@
+.list {
+	display: block;
+	margin: 15px 30px;
+	background: var(--bg-list);
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.list__container {
+	padding: 20px 10px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+}
+
+.list__title {
+	display: grid;
+	grid-template-columns: 120px auto;
+	justify-items: left;
+	align-items: center;
+}
+
+.list__delete {
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.list__icon { 
+	font-size: 30px;
+    line-height: 1;
+}
+
+.list__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.list__no-data {
+	font-weight: 700;
+}
+
+.list__expired .section__icon {
+    color: var( --icon-expired);
+}
+
+.list__expired .card__container {
+    background: var(--bg-expired);
+}
+
+.list__done .section__icon {
+    color: var( --icon-done);
+}
+
+.list__done .card__container {
+    background: var(--bg-done);
+}
+
+@media(max-width: 767px) {
+	.list {
+		margin: 0 0 15px;
+		border-radius: 0;
+		padding: 10px;
+	}
+
+	.list__container {
+		padding: 20px 5px;
+	}
+}
+
+.ays {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background: rgba(51, 51, 51, .3);
+	z-index: 100;
+}
+
+.ays__container {
+	position: absolute;
+	top: 50px;
+	left: calc((100vw - 300px) / 2);
+	box-sizing: border-box;
+	width: 300px;
+	padding: 15px;
+	background: rgba(200, 200, 200, .7);
+	border: 1px solid var(--text-body-invert);
+	border-radius: 10px;
+	color: var(--text-body);
+}
+
+.ays__btn-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: end;
+	margin-top: 10px;
+}
+
+.ays__btn {
+	display: block;
+    border-radius: 5px;
+    border: 0;
+    height: 36px;
+    padding: 0 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-body-invert);
+    background: var(--bg-expired);
+    cursor: pointer;
+}
+
+.ays__btn-yes {
+	justify-self: start;
+	background: var(--bg-done);
+}

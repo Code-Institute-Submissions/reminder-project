@@ -9,6 +9,7 @@ This project is designed as an alert system website that notifies the user when 
 1. [**Project**](#project)
 2. [**UX**](#UX)
     - [**User Stories**](#user-stories)
+	- [**Mockup**] (#mockup)
 3. [**Features**](#features)
 4. [**Technologies**](#technologies)
 5. [**Testing**](#testing)
@@ -32,9 +33,10 @@ This project is a single page website that I am using to display my skills and k
 
 ### User Stories
 
+- The user is able to navigate to each individual section of the site by navigation bar in the upper right corner.
+- The user is able to collapse any section with the help of a clear arrow button.
 - The user is able to know how to use the app with a clear and upfront "How To Use" section.
-- The user is able to hide the "How To Use" section by clicking the information icon in the upper right corner.
-- The user is able to add a reminder with an eye-catching and visible button.
+- The user is able to add a reminder in the "Add Reminder" section.
 - The user is able to both name, and set the expiration date for each individual reminder.
 - The user is able to set a custom time by deleting the minutes and writing in their desired time instead of choosing the fifteen minute interval.
 - The user is able to click the name of each reminder to see a popout with the full reminder name in case the set name is too long.
@@ -46,23 +48,32 @@ This project is a single page website that I am using to display my skills and k
 - The user is able to see when they marked a reminder as "done".
 - The user is able to see all their reminders—expired, done, and still running—in their own separate lists.
 - The user is able to collapse the content of each list to minimize scrolling.
-- The user is able to remove the entire list, and with it all the reminders within, instead of having to remove each reminder individually.
+- The user is able to remove the entire list content instead of having to remove each reminder individually.
+- The user will be asked if they are sure they want to delete an entire list.
 - The user will be notified by the site when a reminder has expired.
 - The user is able to see that a reminder has expired by a change in the tab title documenting how many reminders had expired.
 - The user is able to have their device turned-off without worrying that reminders will stop counting down.
+
+### Mockup
+
+A link that takes you to the mockup I made for this project. Note, that the links take you to a PDF file and do not display an image.
+
+![Mockup](designDocs/mockup/reminder-project.mockup.pdf)
+
+Note!: The site is suppose to look the same on mobile as on PC which is why there is only one file.
 
 ## Features
 
 1. Responsive design.
 2. Hide-able information section.
-3. Form popout.
-4. Form validation.
-5. Dynamically created reminders.
-6. Dynamically created lists.
-7. Live countdown.
-8. Ability to remove either an individual reminder or entire list.
-9. Ability to mark a reminder as done.
-10. Collapse-able list content. 
+3. Form validation.
+4. Dynamically created reminders.
+5. Live countdown.
+6. Ability to remove either an individual reminder or entire list reminders.
+7. "Are you sure?" popout.
+8. Ability to mark a reminder as done.
+9. Collapse-able list content. 
+10. Collapse-able section content.
 11. Reminders are saved to the local storage, allowing the site to keep its intended functionality even if the user has closed the tab or turned-off their device.
 12. Ability to clear the local storage by removing reminders.
 
@@ -114,6 +125,10 @@ The website was tested on these browsers:
 
 The website works as intended on both Crome and Edge while on IE the site is completely devoid of all its CSS styling.
 
+### Mobile
+
+Testing the UI on various screen resolutions ranging from 360px width screen to the more larger iPhone8 screens have all shown no visible error of any kind.
+
 ### Automated Testing
 
 For this project it was asked of me to practice Test Driven Development and use a testing library such as Jasmine, or in the case of React the pre-built-in Jest. It is suffice to say that I did not do so.
@@ -134,12 +149,14 @@ The deployment of the project was done entirely with **GitHub Pages**.
 
 In order to deploy the project onto GitHub Pages I had to do the following steps:
 
-1. Install the gh-pages React dependency by running `npm install gh-pages --save` in my terminal.
-2. Adding both `"predeploy": "npm run build"` and `"deploy": "gh-pages -d build"` under scripts in the package.json file.
-3. Pushed all necessary changes to the master branch.
-4. Ran `npm run deploy` in my terminal in order for React to deploy a stable build of the project.
-5. In the GitHub repository of the project, I navigated to the "Settings" tab and scrolled down until I found the section labeled "GitHub Pages".
-6. For the source of the page I selected the "gh-pages-branch" which was created in step 4. of the deployment process. 
+1. Created a GitHub account at [**GitHub**](https://github.com/). My account can be found [**here**](https://github.com/Zylashro). 
+2. Uploaded all my project files to a GitHub repository designated for the project. The files for this particular project can be found [**here**](https://github.com/Zylashro/reminder-project).
+3. Installed the gh-pages React dependency by running `npm install gh-pages --save` in my terminal.
+4. Added both `"predeploy": "npm run build"` and `"deploy": "gh-pages -d build"` under scripts in the package.json file.
+5. Pushed all necessary changes to the master branch.
+6. Ran `npm run deploy` in my terminal in order for React to deploy a stable build of the project.
+7. In the GitHub repository of the project, I navigated to the "Settings" tab and scrolled down until I found the section labeled "GitHub Pages".
+8. For the source of the page I selected the "gh-pages-branch" which was created in step 4. of the deployment process. 
 
 ## Self-Reflection
 

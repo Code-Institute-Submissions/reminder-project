@@ -5,7 +5,7 @@ const Logo = () => {
 		<svg
 			viewBox='-20.3118896484375 7.986230468749994 660.623779296875 134.0275390625'
 			preserveAspectRatio='xMidYMid'
-			className='logo'
+			className='header__logo'
 		>
 			<g>
 				<g transform='translate(15.73906123638153, 102.61499977111816)'>
