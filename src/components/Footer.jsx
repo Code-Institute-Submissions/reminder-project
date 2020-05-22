@@ -1,15 +1,17 @@
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
+import "./Footer.css";
+
 const Footer = () => {
 	return (
-		<footer className='footer-container'>
-			<div className='footer-social'>
-				<h4 className='footer-heading'>Keep In Touch</h4>
-				<ul className='social-links'>
-					<li className='social-item'>
+		<footer className='footer__container'>
+			<div className='footer__social'>
+				<h4 className='footer__heading'>Keep In Touch</h4>
+				<ul className='footer__social-links'>
+					<li className='footer__social-item'>
 						<a 
-							className='link-item' 
+							className='footer__link-item' 
 							target='_blank'
 							href='https://github.com/Zylashro' 
 							rel='noopener noreferrer'
@@ -17,9 +19,9 @@ const Footer = () => {
 							<FaGithub alt='GitHub Link' />
 						</a>
 					</li>
-					<li className='social-item'>
+					<li className='footer__social-item'>
 						<a 
-							className='link-item'
+							className='footer__link-item'
 							target='_blank'
 							href='https://www.linkedin.com/in/dominik-jug-3aa2971a0/' 
 							rel='noopener noreferrer'
@@ -30,10 +32,10 @@ const Footer = () => {
 				</ul>
 			</div>
 			<div>
-				<p className='copyright'>
-					Copyright © 2020&nbsp;
+				<p className='footer__copyright'>
+					Copyright ©{new Date().getFullYear()}{` `}
 					<span>
-						<a href='index.html'>Task Meister</a>
+						<a href='/'>Task Meister</a>
 					</span>
 					. All rights reserved.
 				</p>

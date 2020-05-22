@@ -5,7 +5,8 @@ import {
 	loadFromLocalStorage,
 	saveToLocalStorage,
 } from "../../utils/HandleLocalStorage";
-import { Down, Up, AlarmClock } from "../svg";
+import { MdAddAlarm } from 'react-icons/md';
+import { IoIosArrowDropup, IoIosArrowDropdown } from 'react-icons/io';
 
 import "./Form.css";
 import "react-datepicker/dist/react-datepicker.css";
@@ -27,19 +28,15 @@ function Form(props) {
 	const showMore = () => {
 		if (isShown) {
 			return (
-				<Up
-					holderClass="section__toggle"
-					iconClass="section__btn"
-					alt="show"
-				/>
+				<div className="section__toggle">
+					<IoIosArrowDropup className="section__btn" alt='show' />
+				</div>
 			);
 		}
 		return (
-			<Down
-				holderClass="section__toggle"
-				iconClass="section__btn"
-				alt="hide"
-			/>
+			<div className="section__toggle">
+				<IoIosArrowDropdown className="section__btn" alt='hide' />
+			</div>
 		);
 	};
 
@@ -68,11 +65,9 @@ function Form(props) {
 	return (
 		<section className="form">
 			<div className="section__heading">
-				<AlarmClock
-					holderClass="section__icon-container"
-					iconClass="section__icon"
-					alt="Add new reminder"
-				/>
+				<div className="section__icon-container">
+					<MdAddAlarm className="section__icon" alt="Add new reminder" />
+				</div>
 				<h2 className="section__title">Add new reminder</h2>
 				<div onClick={() => handleShown(!isShown)}>{showMore()}</div>
 			</div>

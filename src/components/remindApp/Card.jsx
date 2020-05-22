@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 import Countdown from "./Countdown";
 import { ReminderContext } from "./RemindApp";
 import { useOnClickOutside } from "../../utils/ClickOutside";
-import { Complete, Close } from "../svg";
+import {
+	IoIosCloseCircleOutline,
+	IoIosCheckmarkCircleOutline,
+} from "react-icons/io";
 
 import "./Card.css";
 
@@ -98,19 +101,21 @@ const Card = (props) => {
 						className="card__complete-btn"
 						onClick={() => cardComplete()}
 					>
-						<Complete
-							holderClass="card__icon-container"
-							iconClass="card__icon"
-							alt="Complete"
-						/>
+						<div className="card__icon-container">
+							<IoIosCheckmarkCircleOutline
+								className="card__icon"
+								alt="Complete"
+							/>
+						</div>
 					</div>
 				)}
 				<div className="card__delete-btn" onClick={() => cardDelete()}>
-					<Close
-						holderClass="card__icon-container"
-						iconClass="card__icon"
-						alt="Delete"
-					/>
+					<div className="card__icon-container">
+						<IoIosCloseCircleOutline
+							className="card__icon"
+							alt="Delete"
+						/>
+					</div>
 				</div>
 				<div
 					ref={cardRef}
