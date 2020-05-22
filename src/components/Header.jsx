@@ -20,26 +20,32 @@ const Header = (props) => {
 				<ul className="header__nav-bar">
 					<li className="header__nav-item">
 						<div className="header__icon-holder">
-							<MdAddAlarm
-								className="header__icon"
-								alt="Go to add reminder section"
-							/>
+							<a href="#form__id">
+								<MdAddAlarm
+									className="header__icon"
+									alt="Go to add reminder section"
+								/>
+							</a>
 						</div>
 					</li>
 					<li className="header__nav-item">
 						<div className="header__icon-holder">
-							<MdInfoOutline
-								className="header__icon"
-								alt="Go to how to use section"
-							/>
+							<a href="#htu__id">
+								<MdInfoOutline
+									className="header__icon"
+									alt="Go to how to use section"
+								/>
+							</a>
 						</div>
 					</li>
 					<li className="header__nav-item">
 						<div className="header__icon-holder">
-							<MdAssignment
-								className="header__icon"
-								alt="Go to list section"
-							/>
+							<a href="#list__id">
+								<MdAssignment
+									className="header__icon"
+									alt="Go to list section"
+								/>
+							</a>
 						</div>
 					</li>
 					<li

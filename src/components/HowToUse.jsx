@@ -36,7 +36,7 @@ const HowToUse = () => {
 	};
 
 	return (
-		<section className="htu">
+		<section className="htu" id='htu__id'>
 			<div className="section__heading">
 				<div className="section__icon-container">
 					<MdInfoOutline className="section__icon" alt="How to use" />

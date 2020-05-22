@@ -88,7 +88,7 @@ function List(props) {
 	}
 
 	return (
-		<section className={`list list__${props.listType}`}>
+		<section className={`list list__${props.listType}`} id='list__id'>
 			<div className="section__heading">
 				<div className="section__icon-container">
 					<MdAssignment className="section__icon" alt="Remainders" />
