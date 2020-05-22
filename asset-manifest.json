@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/reminder-project/static/css/main.fcc08e54.chunk.css",
-    "main.js": "/reminder-project/static/js/main.208b701a.chunk.js",
-    "main.js.map": "/reminder-project/static/js/main.208b701a.chunk.js.map",
+    "main.js": "/reminder-project/static/js/main.3bae15ae.chunk.js",
+    "main.js.map": "/reminder-project/static/js/main.3bae15ae.chunk.js.map",
     "runtime-main.js": "/reminder-project/static/js/runtime-main.f799ea5f.js",
     "runtime-main.js.map": "/reminder-project/static/js/runtime-main.f799ea5f.js.map",
     "static/css/2.ecffae5e.chunk.css": "/reminder-project/static/css/2.ecffae5e.chunk.css",
     "static/js/2.536efc7b.chunk.js": "/reminder-project/static/js/2.536efc7b.chunk.js",
     "static/js/2.536efc7b.chunk.js.map": "/reminder-project/static/js/2.536efc7b.chunk.js.map",
     "index.html": "/reminder-project/index.html",
-    "precache-manifest.fb5f38b31a96a03ec232ef244e4f4d4e.js": "/reminder-project/precache-manifest.fb5f38b31a96a03ec232ef244e4f4d4e.js",
+    "precache-manifest.89ae123f2a31750b05a7efdf3d469a28.js": "/reminder-project/precache-manifest.89ae123f2a31750b05a7efdf3d469a28.js",
     "service-worker.js": "/reminder-project/service-worker.js",
     "static/css/2.ecffae5e.chunk.css.map": "/reminder-project/static/css/2.ecffae5e.chunk.css.map",
     "static/css/main.fcc08e54.chunk.css.map": "/reminder-project/static/css/main.fcc08e54.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.ecffae5e.chunk.css",
     "static/js/2.536efc7b.chunk.js",
     "static/css/main.fcc08e54.chunk.css",
-    "static/js/main.208b701a.chunk.js"
+    "static/js/main.3bae15ae.chunk.js"
   ]
 }
