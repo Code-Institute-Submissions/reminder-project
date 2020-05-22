@@ -112,7 +112,6 @@ function RemindApp(props) {
 }
 
 RemindApp.propTypes = {
-	formActive: PropTypes.bool.isRequired,
 	handleForm: PropTypes.func.isRequired
 };
 

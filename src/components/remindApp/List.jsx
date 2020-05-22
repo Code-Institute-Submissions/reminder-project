@@ -20,6 +20,8 @@ import "./List.css";
 function List(props) {
 	const { reminders, setReminders } = React.useContext(ReminderContext);
 
+	const [aysIsHidden, setAysIsHidden] = React.useState(true);
+
 	/**
 	 *  TBW
 	 */
@@ -58,6 +60,11 @@ function List(props) {
 		);
 	};
 
+	function areYouSure() {
+		deleteList(props.listType);
+		setAysIsHidden(true);
+	}
+
 	/**
 	 *	Delete selected part by selecting the rest and saving it.
 	 */
@@ -88,24 +95,46 @@ function List(props) {
 	}
 
 	return (
-		<section className={`list list__${props.listType}`} id='list__id'>
+		<section className={`list list__${props.listType}`} id="list__id">
+			<div className={aysIsHidden ? "hidden" : "ays"}>
+				<div className="ays__container">
+					<h2>Are You Sure?</h2>
+					<p>This action cannot be undone!</p>
+					<div className="ays__btn-container">
+						<button
+							className="ays__btn ays__btn-yes"
+							onClick={() => areYouSure(props.listType)}
+						>
+							Yes
+						</button>
+						<button
+							className="ays__btn"
+							onClick={() => setAysIsHidden(true)}
+						>
+							No
+						</button>
+					</div>
+				</div>
+			</div>
 			<div className="section__heading">
 				<div className="section__icon-container">
 					<MdAssignment className="section__icon" alt="Remainders" />
 				</div>
 				<h2 className="section__title list__title">
 					<span>{name}</span>
-					<div
-						className="list__delete"
-						onClick={() => deleteList(props.listType)}
-					>
-						<div className="list__icon-container">
-							<IoIosCloseCircleOutline
-								className="list__icon"
-								alt="Delete list items"
-							/>
+					{props.list.length > 0 && (
+						<div
+							className="list__delete"
+							onClick={() => setAysIsHidden(false)}
+						>
+							<div className="list__icon-container">
+								<IoIosCloseCircleOutline
+									className="list__icon"
+									alt="Delete list items"
+								/>
+							</div>
 						</div>
-					</div>
+					)}
 				</h2>
 				<div onClick={() => handleShown(!isShown)}>{showMore()}</div>
 			</div>
